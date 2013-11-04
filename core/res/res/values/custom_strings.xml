@@ -19,6 +19,11 @@
     <string name="permission_remember_choice">Remember</string>
     <string name="permission">Permission</string>
 
+    <!-- ADB notifications -->
+    <string name="adb_net_active_notification_title">ADB over network enabled</string>
+    <string name="adb_both_active_notification_title">ADB over USB &amp; network enabled</string>
+    <string name="adb_active_generic_notification_message">Touch to disable debugging.</string>
+
     <!-- USB_PREFERENCES: Notification for when no USB options chosen.  This is the title -->
     <string name="usb_choose_notification_title">Touch to choose USB options.</string>
 
