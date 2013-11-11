@@ -3450,6 +3450,12 @@ public final class Settings {
                 "notification_light_screen_on_enable";
 
         /**
+         * Whether to control brightness from status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
+
+        /**
          * Status bar battery %
          * 0: Hide the battery percentage
          * 1: Display the battery percentage inside the icon
