@@ -15,19 +15,14 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Floating action button -->
-    <color name="fab_color">#ff009688</color>
-    <color name="floating_action_button_icon_color">#ffffff</color>
+    <!-- Slim recent app screen animation -->
+    <style name="Animation.RecentScreen">
+        <item name="windowEnterAnimation">@anim/recent_screen_enter</item>
+        <item name="windowExitAnimation">@anim/recent_screen_exit</item>
+    </style>
 
-    <!-- Slim recent -->
-    <color name="recents_empty_dark_color">#ff4d4d4d</color>
-    <color name="recents_empty_light_color">#ffb3b3b3</color>
-    <color name="recent_background">#80000000</color>
-    <!-- Card Color -->
-    <color name="card_background">#ffffffff</color>
-    <color name="card_background_header">#00ffffff</color>
-    <color name="card_backgroundExpand">#00ffffff</color>
-    <color name="card_text_color_header">#ff000000</color>
-    <!-- Used by selector -->
-    <color name="card_pressed">#7e3c3c3c</color>
+    <style name="Animation.RecentScreen.Left">
+        <item name="windowEnterAnimation">@anim/recent_screen_enter_left</item>
+        <item name="windowExitAnimation">@anim/recent_screen_exit_left</item>
+    </style>
 </resources>
