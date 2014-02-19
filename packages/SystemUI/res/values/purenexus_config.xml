@@ -23,4 +23,6 @@
     <integer name="recents_animate_task_bar_enter_delay">275</integer>
     <!-- The min animation duration for animating the task bar out. -->
     <integer name="recents_animate_task_bar_exit_duration">125</integer>
+    <!-- Default value how much apps show the app screenshot on recents view entry -->
+    <integer name="expanded_items_default">2</integer>
 </resources>
