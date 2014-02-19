@@ -82,4 +82,16 @@
     <color name="play_button_text_color">#000000</color>
     <color name="zen_ic_close_tint_color">@android:color/white</color>
     <color name="header_debug_info_text_color">#00A040</color>
+
+    <!-- Slim recent -->
+    <color name="recents_empty_dark_color">#ff4d4d4d</color>
+    <color name="recents_empty_light_color">#ffb3b3b3</color>
+    <color name="recent_background">#80000000</color>
+    <!-- Card Color -->
+    <color name="card_background">#ffffffff</color>
+    <color name="card_background_header">#00ffffff</color>
+    <color name="card_backgroundExpand">#00ffffff</color>
+    <color name="card_text_color_header">#ff000000</color>
+    <!-- Used by selector -->
+    <color name="card_pressed">#7e3c3c3c</color>
 </resources>
