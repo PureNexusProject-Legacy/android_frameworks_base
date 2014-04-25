@@ -30,4 +30,9 @@
     <string name="reboot_confirm" product="default">Your phone will reboot.</string>
     <!-- Reboot Progress Dialog. This is shown if the user chooses to reboot the phone. -->
     <string name="reboot_progress">Rebooting\u2026</string>
+
+    <!-- Lockscreen Wallpaper Permission Title -->
+    <string name="permlab_setKeyguardWallpaper">set keyguard wallpaper</string>
+    <!-- Lockscreen Wallpaper Permission Description -->
+    <string name="permdesc_setKeyguardWallpaper">Allows an app to change the lock screen wallpaper.</string>
 </resources>
