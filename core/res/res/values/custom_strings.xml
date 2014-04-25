@@ -53,6 +53,11 @@
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_recordScreen">Allows the app to record the users screen</string>
 
+    <!-- Title of an application permission, listed so the user can choose whether they want the application to do this. -->
+    <string name="permlab_setKeyguardWallpaper">set keyguard wallpaper</string>
+    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_setKeyguardWallpaper">Allows an app to change the lock screen wallpaper.</string>
+
     <!-- ADB notifications -->
     <string name="adb_net_active_notification_title">ADB over network enabled</string>
     <string name="adb_both_active_notification_title">ADB over USB &amp; network enabled</string>
