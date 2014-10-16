@@ -266,6 +266,13 @@ public class DownloadManager {
      */
     public final static int PAUSED_UNKNOWN = 4;
 
+   /**
+    * Value of {@link #COLUMN_REASON} when the download is paused by user.
+    *
+    * @hide
+    */
+    public final static int PAUSED_BY_APP = 5;
+
     /**
      * Broadcast intent action sent by the download manager when a download completes.
      */
@@ -1121,6 +1128,30 @@ public class DownloadManager {
     }
 
     /**
+     * Pause the given running download by user.
+     *
+     * @param id the ID of the download to be paused
+     * @hide
+     */
+    public void pauseDownload(long id) {
+        ContentValues values = new ContentValues();
+        values.put(Downloads.Impl.COLUMN_CONTROL, Downloads.Impl.CONTROL_PAUSED);
+        mResolver.update(ContentUris.withAppendedId(mBaseUri, id), values, null, null);
+    }
+
+    /**
+     * Resume the given paused download by user.
+     *
+     * @param id the ID of the download to be resumed
+     * @hide
+     */
+    public void resumeDownload(long id) {
+       ContentValues values = new ContentValues();
+       values.put(Downloads.Impl.COLUMN_CONTROL, Downloads.Impl.CONTROL_RUN);
+       mResolver.update(ContentUris.withAppendedId(mBaseUri, id), values, null, null);
+    }
+
+    /**
      * Returns maximum size, in bytes, of downloads that may go over a mobile connection; or null if
      * there's no limit
      *
@@ -1355,6 +1386,9 @@ public class DownloadManager {
 
                 case Downloads.Impl.STATUS_QUEUED_FOR_WIFI:
                     return PAUSED_QUEUED_FOR_WIFI;
+
+                case Downloads.Impl.STATUS_PAUSED_BY_APP:
+                    return PAUSED_BY_APP;
 
                 default:
                     return PAUSED_UNKNOWN;
