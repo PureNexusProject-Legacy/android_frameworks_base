@@ -22,6 +22,8 @@
   <!-- Intent chooser -->
   <java-symbol type="id" name="filtered_item_container" />
 
+  <java-symbol type="string" name="usb_choose_notification_title" />
+
   <!-- App-Ops -->
   <java-symbol type="id" name="permission_text" />
   <java-symbol type="id" name="permission_remember_layout" />

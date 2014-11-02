@@ -19,6 +19,9 @@
     <string name="permission_remember_choice">Remember</string>
     <string name="permission">Permission</string>
 
+    <!-- USB_PREFERENCES: Notification for when no USB options chosen.  This is the title -->
+    <string name="usb_choose_notification_title">Touch to choose USB options.</string>
+
     <!-- App ops requests -->
     <string name="app_ops_access_camera">access the camera</string>
     <string name="app_ops_access_location">access your location</string>
