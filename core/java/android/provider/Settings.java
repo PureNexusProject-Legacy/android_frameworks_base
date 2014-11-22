@@ -3602,6 +3602,11 @@ public final class Settings {
          */
         public static final String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT = "lockscreen_scramble_pin_layout";
 
+        /**
+         * The delay when killing the app on long press takes place
+         * @hide
+         */
+        public static final String LONG_PRESS_KILL_DELAY = "long_press_kill_delay";
 
         /**
          * Whether national data roaming should be used.
