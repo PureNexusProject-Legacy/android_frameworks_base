@@ -45,6 +45,9 @@
   <java-symbol type="string" name="adb_active_generic_notification_message" />
   <java-symbol type="string" name="usb_choose_notification_title" />
 
+  <!-- Doze mode -->
+  <java-symbol type="bool" name="config_doze_enabled_by_default" />
+
   <!-- Last app switch animations -->
   <java-symbol type="anim" name="last_app_in" />
   <java-symbol type="anim" name="last_app_out" />
