@@ -30,4 +30,7 @@
 
     <!-- no interuptions except alarms -->
     <string name="zen_no_interruptions_but_alarm">No interruptions. Except alarms.</string>
+
+    <!-- Battery level for expanded quick settings [CHAR LIMIT=2] -->
+    <string name="battery_level_template"><xliff:g id="level" example="45">%d</xliff:g>%%</string>
 </resources>
