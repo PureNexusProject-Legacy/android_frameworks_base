@@ -3955,6 +3955,12 @@ public final class Settings {
         public static final String STATUSBAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
 
         /**
+         * Whether to show the IME switcher in the status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_IME_SWITCHER = "status_bar_ime_switcher";
+
+        /**
          * Boolean value on whether to show weather in the statusbar
          * @hide
          */
