@@ -2119,6 +2119,12 @@ public final class Settings {
         public static final String RECENTS_LONGPRESS = "recents_longpress";
 
         /**
+         * Whether to show the IME switcher in the status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_IME_SWITCHER = "status_bar_ime_switcher";
+
+        /**
          * Whether to allow one finger quick settings expansion on the right side of the statusbar.
          *
          * @hide
