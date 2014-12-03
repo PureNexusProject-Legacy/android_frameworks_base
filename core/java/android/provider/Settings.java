@@ -2160,8 +2160,15 @@ public final class Settings {
          */
         public static final String QS_QUICK_PULLDOWN = "qs_quick_pulldown";
 
-        /** Whether to show the brightness slider in quick settings panel.
+        /**
+         * Quick Settings Smart Pulldown
          *
+         * @hide
+         */
+        public static final String QS_SMART_PULLDOWN = "qs_smart_pulldown";
+
+        /**
+         * Whether to show the brightness slider in quick settings panel.
          * @hide
          */
         @Deprecated
