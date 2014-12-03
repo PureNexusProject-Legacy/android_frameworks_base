@@ -3698,6 +3698,12 @@ public final class Settings {
         public static final String PROXIMITY_AUTO_SPEAKER_INCALL_ONLY = "proximity_auto_speaker_incall_only";
 
         /**
+         * Quick Settings Smart Pulldown
+         * @hide
+         */
+        public static final String QS_SMART_PULLDOWN = "qs_smart_pulldown";
+
+        /**
          * Whether to dismiss all recents tasks
          * @hide
          */
