@@ -44,6 +44,7 @@
     <!-- Global Actions -->
     <string name="silent_mode_priority">Priority</string>
     <string name="silent_mode_none">None</string>
+    <string name="global_action_screenshot">Screenshot</string>
 
     <!-- ADB notifications -->
     <string name="adb_net_active_notification_title">ADB over network enabled</string>
