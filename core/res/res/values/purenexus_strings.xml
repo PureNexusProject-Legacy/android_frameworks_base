@@ -31,7 +31,13 @@
     <!-- Reboot Progress Dialog. This is shown if the user chooses to reboot the phone. -->
     <string name="reboot_progress">Rebooting\u2026</string>
 
+    <!-- Global Actions -->
+    <string name="global_action_screenshot">Screenshot</string>
+    <string name="global_action_search">Search</string>
+    <string name="global_action_voicesearch">Voice Search</string>
+
     <!-- Lockscreen Wallpaper Permission Title -->
+    <!-- Title of an application permission, listed so the user can choose whether they want the application to do this. -->
     <string name="permlab_setKeyguardWallpaper">set keyguard wallpaper</string>
     <!-- Lockscreen Wallpaper Permission Description -->
     <string name="permdesc_setKeyguardWallpaper">Allows an app to change the lock screen wallpaper.</string>
