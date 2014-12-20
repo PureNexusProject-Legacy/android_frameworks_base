@@ -27,9 +27,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.util.Pair;
 import android.view.KeyEvent;
 import android.view.View;
@@ -179,6 +181,25 @@ public class RecentsActivity extends Activity implements RecentsView.RecentsView
         }
     });
 
+    /**
+     * Enable/disable recents search widget.
+     */
+    private boolean isRecentsSearchbarEnabled() {
+        boolean recentsSearchbarEnabled = Settings.System.getIntForUser(
+            getContentResolver(), Settings.System.RECENTS_SEARCH_BAR,
+                1, UserHandle.USER_CURRENT) == 1;
+
+        // Update search bar space height
+        Resources res = getResources();
+        if (!recentsSearchbarEnabled) {
+            RecentsConfiguration.searchBarSpaceHeightPx = 0;
+        } else {
+            RecentsConfiguration.searchBarSpaceHeightPx =
+                res.getDimensionPixelSize(R.dimen.recents_search_bar_space_height);
+        }
+        return recentsSearchbarEnabled;
+    }
+
     /** Updates the set of recent tasks */
     void updateRecentsTasks(Intent launchIntent) {
         // If AlternateRecentsComponent has preloaded a load plan, then use that to prevent
@@ -250,9 +271,11 @@ public class RecentsActivity extends Activity implements RecentsView.RecentsView
             }
             findViewById(R.id.floating_action_button).setVisibility(View.VISIBLE);
             if (mRecentsView.hasSearchBar()) {
-                mRecentsView.setSearchBarVisibility(View.VISIBLE);
+                mRecentsView.setSearchBarVisibility(isRecentsSearchbarEnabled() ? View.VISIBLE : View.GONE);
             } else {
-                addSearchBarAppWidgetView();
+                if (isRecentsSearchbarEnabled()) {
+                    addSearchBarAppWidgetView();
+                }
             }
         }
 
