@@ -3484,6 +3484,12 @@ public final class Settings {
         public static final String NONE_IS_SILENT = "none_is_silent";
 
         /**
+         * Whether to show a fullscreen keyboard in landscape
+         * @hide
+         */
+        public static final String FULLSCREEN_KEYBOARD_MODE = "fullscreen_keyboard_mode";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
