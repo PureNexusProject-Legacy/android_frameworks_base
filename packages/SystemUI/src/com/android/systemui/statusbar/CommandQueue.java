@@ -56,7 +56,8 @@ public class CommandQueue extends IStatusBar.Stub {
     private static final int MSG_BUZZ_BEEP_BLINKED          = 15 << MSG_SHIFT;
     private static final int MSG_NOTIFICATION_LIGHT_OFF     = 16 << MSG_SHIFT;
     private static final int MSG_NOTIFICATION_LIGHT_PULSE   = 17 << MSG_SHIFT;
-    private static final int MSG_SHOW_SCREEN_PIN_REQUEST    = 18 << MSG_SHIFT;
+    private static final int MSG_HIDE_HEADS_UP              = 18 << MSG_SHIFT;
+    private static final int MSG_SHOW_SCREEN_PIN_REQUEST    = 19 << MSG_SHIFT;
 
     public static final int FLAG_EXCLUDE_NONE = 0;
     public static final int FLAG_EXCLUDE_SEARCH_PANEL = 1 << 0;
@@ -98,6 +99,7 @@ public class CommandQueue extends IStatusBar.Stub {
         public void buzzBeepBlinked();
         public void notificationLightOff();
         public void notificationLightPulse(int argb, int onMillis, int offMillis);
+        public void scheduleHeadsUpClose();
         public void showScreenPinningRequest();
     }
 
@@ -240,6 +242,13 @@ public class CommandQueue extends IStatusBar.Stub {
         }
     }
 
+    public void scheduleHeadsUpClose() {
+        synchronized (mList) {
+            mHandler.removeMessages(MSG_HIDE_HEADS_UP);
+            mHandler.sendEmptyMessage(MSG_HIDE_HEADS_UP);
+        }
+    }
+
     public void showScreenPinningRequest() {
         synchronized (mList) {
             mHandler.sendEmptyMessage(MSG_SHOW_SCREEN_PIN_REQUEST);
@@ -324,6 +333,9 @@ public class CommandQueue extends IStatusBar.Stub {
                     break;
                 case MSG_NOTIFICATION_LIGHT_PULSE:
                     mCallbacks.notificationLightPulse((Integer) msg.obj, msg.arg1, msg.arg2);
+                    break;
+                case MSG_HIDE_HEADS_UP:
+                    mCallbacks.scheduleHeadsUpClose();
                     break;
                 case MSG_SHOW_SCREEN_PIN_REQUEST:
                     mCallbacks.showScreenPinningRequest();
