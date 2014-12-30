@@ -33,6 +33,9 @@
   <java-symbol type="string" name="app_killed_message" />
   <java-symbol type="integer" name="config_backKillTimeout" />
 
+  <!-- Intent chooser -->
+  <java-symbol type="id" name="filtered_item_container" />
+
   <!-- Doze mode -->
   <java-symbol type="bool" name="config_doze_enabled_by_default" />
 
