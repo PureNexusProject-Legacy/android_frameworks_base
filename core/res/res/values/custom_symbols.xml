@@ -52,6 +52,10 @@
   <java-symbol type="anim" name="last_app_in" />
   <java-symbol type="anim" name="last_app_out" />
 
+  <!-- Screen record -->
+  <java-symbol type="drawable" name="ic_lock_screen_record" />
+  <java-symbol type="string" name="global_action_screen_record" />
+
   <!-- App-Ops -->
   <java-symbol type="id" name="permission_text" />
   <java-symbol type="id" name="permission_remember_layout" />
