@@ -4371,7 +4371,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                     // If we aren't pressing recents right now then they presses
                     // won't be together, so send the standard long-press action.
                     sendBackLongPress = true;
-                } else if ((v.getId() == R.id.recent_apps)) {
+                } else if (NavbarEditor.NAVBAR_RECENT.equals(v.getTag())
+                         && !activityManager.isInLockTaskMode()) {
                     hijackRecentsLongPress = true;
                 }
                 mLastLockToAppLongPress = time;
@@ -4379,7 +4380,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                 // If this is back still need to handle sending the long-press event.
                 if (NavbarEditor.NAVBAR_BACK.equals(v.getTag())) {
                     sendBackLongPress = true;
-                } else if (v.getId() == R.id.recent_apps) {
+                } else if (NavbarEditor.NAVBAR_RECENT.equals(v.getTag())
+                         && !activityManager.isInLockTaskMode()) {
                     hijackRecentsLongPress = true;
                 } else if (isAccessiblityEnabled && activityManager.isInLockTaskMode()) {
                     // When in accessibility mode a long press that is recents (not back)
