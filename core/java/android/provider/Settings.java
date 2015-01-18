@@ -6778,6 +6778,12 @@ public final class Settings {
         public static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
 
         /**
+         * Launch actions for left/right lockscreen targets
+         * @hide
+         */
+        public static final String LOCKSCREEN_TARGETS = "lockscreen_target_actions";
+
+        /**
          * This are the settings to be backed up.
          *
          * NOTE: Settings are backed up and restored in the order they appear
