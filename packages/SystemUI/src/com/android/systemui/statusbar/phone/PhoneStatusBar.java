@@ -4333,7 +4333,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                 keyButtonView.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_LONG_CLICKED);
             }
 
-            if (hijackRecentsLongPress) {
+            if (hijackRecentsLongPress && (Settings.System.getInt(mContext.getContentResolver(), Settings.System.RECENTS_LONGPRESS, 0) == 1)) {
                 ActionUtils.switchToLastApp(mContext, mCurrentUserId);
             }
         } catch (RemoteException e) {

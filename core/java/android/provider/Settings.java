@@ -2059,7 +2059,15 @@ public final class Settings {
          */
         public static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
 
-        /** Whether to allow one finger quick settings expansion on the right side of the statusbar.
+        /**
+         * Whether long press recents goes to last app
+         *
+         * @hide
+         */
+        public static final String RECENTS_LONGPRESS = "recents_longpress";
+
+        /**
+         * Whether to allow one finger quick settings expansion on the right side of the statusbar.
          *
          * @hide
          */
