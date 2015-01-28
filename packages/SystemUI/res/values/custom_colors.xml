@@ -76,4 +76,9 @@
 
     <!-- Used by selector -->
     <color name="card_pressed">#7e3c3c3c</color>
+
+    <!-- Nav Rings --> 
+    <color name="navring_check_tint">@android:color/white</color>
+    <color name="navring_edit_fill">#FF558B2F</color>
+    <color name="navring_edit_tint">#FF689F38</color>
 </resources>
