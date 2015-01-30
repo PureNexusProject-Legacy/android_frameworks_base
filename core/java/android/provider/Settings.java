@@ -1984,6 +1984,11 @@ public final class Settings {
         public static final String SHOW_ALARM_ICON = "show_alarm_icon";
 
         /**
+         * Option to hide the Bluetooth icon in the status bar.
+         */
+        public static final String SHOW_BT_ICON = "show_bt_icon";
+
+        /**
          * Scaling factor for fonts, float.
          */
         public static final String FONT_SCALE = "font_scale";

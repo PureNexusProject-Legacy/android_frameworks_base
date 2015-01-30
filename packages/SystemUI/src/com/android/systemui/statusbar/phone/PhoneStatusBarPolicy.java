@@ -67,6 +67,7 @@ public class PhoneStatusBarPolicy {
     private final CastController mCast;
     private final HotspotController mHotspot;
     private boolean mAlarmIconVisible;
+    private boolean mBtIconVisible;
 
     // Assume it's all good unless we hear otherwise.  We don't always seem
     // to get broadcasts that it *is* there.
@@ -168,18 +169,24 @@ public class PhoneStatusBarPolicy {
         mService.setIconVisibility(SLOT_HOTSPOT, mHotspot.isHotspotEnabled());
         mHotspot.addCallback(mHotspotCallback);
 
-        mAlarmIconObserver.onChange(true);
+        mIconObserver.onChange(true);
         mContext.getContentResolver().registerContentObserver(
                 Settings.System.getUriFor(Settings.System.SHOW_ALARM_ICON),
-                false, mAlarmIconObserver);
+                false, mIconObserver);
+        mContext.getContentResolver().registerContentObserver(
+                Settings.System.getUriFor(Settings.System.SHOW_BT_ICON),
+                false, mIconObserver);
     }
 
-    private ContentObserver mAlarmIconObserver = new ContentObserver(null) {
+    private final ContentObserver mIconObserver = new ContentObserver(null) {
         @Override
         public void onChange(boolean selfChange, Uri uri) {
             mAlarmIconVisible = Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.SHOW_ALARM_ICON, 1) == 1;
+            mBtIconVisible = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.SHOW_BT_ICON, 1) == 1;
             updateAlarm();
+            updateBluetooth();
         }
 
         @Override
@@ -294,7 +301,7 @@ public class PhoneStatusBarPolicy {
         }
 
         mService.setIcon(SLOT_BLUETOOTH, iconId, 0, contentDescription);
-        mService.setIconVisibility(SLOT_BLUETOOTH, mBluetoothEnabled);
+        mService.setIconVisibility(SLOT_BLUETOOTH, mBluetoothEnabled && mBtIconVisible);
     }
 
     private final void updateTTY(Intent intent) {
