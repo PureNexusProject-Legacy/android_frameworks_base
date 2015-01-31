@@ -46,6 +46,7 @@
     <string name="silent_mode_none">None</string>
     <string name="global_action_screenshot">Screenshot</string>
     <string name="global_action_screen_record">Screen record</string>
+    <string name="global_action_current_user">Current</string>
 
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_recordScreen">Record content being displayed</string>
