@@ -282,7 +282,7 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
         boolean customTarget = mShortcutHelper.isTargetCustom(shortcut);
         if (customTarget) {
             boolean isEmpty = mShortcutHelper.isTargetEmpty(shortcut);
-            if (visible && isEmpty) {
+            if (isEmpty) {
                 visible = false;
             } else {
                 visible = true;
@@ -385,7 +385,6 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     }
 
     public void launchCamera() {
-        mFlashlightController.killFlashlight();
         Intent intent;
         if (!mShortcutHelper.isTargetCustom(LockscreenShortcutsHelper.Shortcuts.RIGHT_SHORTCUT)) {
             intent = getCameraIntent();
