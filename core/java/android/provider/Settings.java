@@ -3311,6 +3311,12 @@ public final class Settings {
         public static final String DOZE_SCREEN_BRIGHTNESS = "doze_screen_brightness";
 
         /**
+         * Force expanded notifications on all apps that support it.
+         * @hide
+         */
+        public static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
+
+        /**
          * Control whether the accelerometer will be used to change lockscreen
          * orientation.  If 0, it will not be used; if 1, it will be used by default.
          * @hide
