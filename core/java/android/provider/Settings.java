@@ -2125,17 +2125,25 @@ public final class Settings {
         public static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
 
         /**
+         * Whether to show the IME switcher in the status bar
+         *
+         * @hide
+         */
+        public static final String STATUS_BAR_IME_SWITCHER = "status_bar_ime_switcher";
+
+        /**
+         * Whether to enable ticker animation in statusbar
+         *
+         * @hide
+         */
+        public static final String STATUS_BAR_TICKER_ENABLED = "status_bar_ticker_enabled";
+
+        /**
          * Whether long press recents goes to last app
          *
          * @hide
          */
         public static final String RECENTS_LONGPRESS = "recents_longpress";
-
-        /**
-         * Whether to show the IME switcher in the status bar
-         * @hide
-         */
-        public static final String STATUS_BAR_IME_SWITCHER = "status_bar_ime_switcher";
 
         /**
          * Whether to allow one finger quick settings expansion on the right side of the statusbar.
