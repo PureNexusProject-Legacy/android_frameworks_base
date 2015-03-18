@@ -888,7 +888,9 @@ public class NotificationPanelView extends PanelView implements
                 || mQsSmartPullDown == 2 && !mStatusBar.hasActiveVisibleNotifications()
                 || (mQsSmartPullDown == 3 && !mStatusBar.hasActiveVisibleNotifications()
                         && !mStatusBar.hasActiveClearableNotifications())) {
+            if (!isQSEventBlocked()) {
                 showQsOverride = true;
+            }
         }
 
         return twoFingerDrag || showQsOverride || stylusButtonClickDrag || mouseButtonClickDrag;
