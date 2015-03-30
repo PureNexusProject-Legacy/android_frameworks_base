@@ -728,6 +728,9 @@ public class VolumePanel extends Handler implements DemoMode {
                         public void onClick(View v) {
                             resetTimeout();
                             toggleRinger(sc);
+			if (!mVolumeLinkNotification) {
+                            updateStates();
+                            }
                         }
                     });
                 }
@@ -1355,6 +1358,8 @@ public class VolumePanel extends Handler implements DemoMode {
                 } else {
                     r.run();
                 }
+            } else {
+                Log.d(mTag, "Bad, mDialog is null...");
             }
         }
 
