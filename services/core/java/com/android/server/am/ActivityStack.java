@@ -3916,8 +3916,8 @@ final class ActivityStack {
     }
 
     void getTasksLocked(List<RunningTaskInfo> list, int callingUid, boolean allowed) {
-        boolean setFirstAsLast = mStackSupervisor.getFocusedStack() == this;
-        boolean first = true;
+        boolean focusedStack = mStackSupervisor.getFocusedStack() == this;
+        boolean topTask = true;
         for (int taskNdx = mTaskHistory.size() - 1; taskNdx >= 0; --taskNdx) {
             final TaskRecord task = mTaskHistory.get(taskNdx);
             if (task.getTopActivity() == null) {
@@ -3956,9 +3956,11 @@ final class ActivityStack {
             ci.baseActivity = r.intent.getComponent();
             ci.topActivity = top.intent.getComponent();
             ci.lastActiveTime = task.lastActiveTime;
-            if (setFirstAsLast && first) {
-                ci.lastActiveTime = SystemClock.elapsedRealtime();
-                first = false;
+            if (focusedStack && topTask) {
+                // Give the latest time to ensure foreground task can be sorted
+                // at the first, because lastActiveTime of creating task is 0.
+                ci.lastActiveTime = System.currentTimeMillis();
+                topTask = false;
             }
 
             if (top.task != null) {
@@ -3966,8 +3968,6 @@ final class ActivityStack {
             }
             ci.numActivities = numActivities;
             ci.numRunning = numRunning;
-            //System.out.println(
-            //    "#" + maxNum + ": " + " descr=" + ci.description);
             list.add(ci);
         }
     }
