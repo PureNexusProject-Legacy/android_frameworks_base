@@ -21,6 +21,6 @@ import com.android.systemui.statusbar.policy.ZenModeController;
 
 public interface VolumeComponent extends DemoMode {
     ZenModeController getZenController();
-    void dismissNow();
     void setVolumePanel(VolumePanel panel);
+    void dismissNow();
 }

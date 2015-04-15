@@ -1044,6 +1044,7 @@ public class NotificationManagerService extends SystemService {
             mDisableNotificationEffects = true;
         }
         mZenModeHelper.readZenModeFromSetting();
+        mZenModeHelper.readSilentModeFromSetting();
         mZenModeHelper.readLightsAllowedModeFromSetting();
         mInterruptionFilter = mZenModeHelper.getZenModeListenerInterruptionFilter();
 
@@ -1112,8 +1113,9 @@ public class NotificationManagerService extends SystemService {
 
             // Grab our optional AudioService
             mAudioManager = (AudioManager) getContext().getSystemService(Context.AUDIO_SERVICE);
-            updateDisableDucking();
             mZenModeHelper.onSystemReady();
+
+            updateDisableDucking();
         } else if (phase == SystemService.PHASE_THIRD_PARTY_APPS_CAN_START) {
             // This observer will force an update when observe is called, causing us to
             // bind to listener services.
@@ -1715,7 +1717,8 @@ public class NotificationManagerService extends SystemService {
         if (mDisableNotificationEffects) {
             return "booleanState";
         }
-        if ((mListenerHints & HINT_HOST_DISABLE_EFFECTS) != 0) {
+        if ((mListenerHints & HINT_HOST_DISABLE_EFFECTS) != 0
+                && !mZenModeHelper.getIsNoneSilent()) {
             return "listenerHints";
         }
         if (mCallState != TelephonyManager.CALL_STATE_IDLE && !mZenModeHelper.isCall(record)) {
