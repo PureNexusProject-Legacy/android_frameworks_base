@@ -79,4 +79,6 @@
   <java-symbol type="dimen" name="global_actions_avatar_size" />
   <java-symbol type="id" name="option4" />
 
+   <!-- Doze invert -->
+  <java-symbol type="bool" name="config_invert_colors_on_doze" />
 </resources>
