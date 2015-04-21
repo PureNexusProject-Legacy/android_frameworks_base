@@ -40,7 +40,7 @@ public class ImeTile extends QSTile<QSTile.BooleanState> {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsLogger.DIRTYTWEAKS;
+        return MetricsLogger.INPUTMETHOD_KEYBOARD;
     }
 
     @Override
