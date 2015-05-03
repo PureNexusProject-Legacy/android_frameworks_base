@@ -31,6 +31,7 @@ import android.app.TaskStackBuilder;
 import android.app.admin.DevicePolicyManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -268,6 +269,9 @@ public abstract class BaseStatusBar extends SystemUI implements
 
     protected boolean mVrMode;
 
+    private ArrayList<String> mDndList = new ArrayList<String>();
+    private ArrayList<String> mBlacklist = new ArrayList<String>();
+
     @Override  // NotificationData.Environment
     public boolean isDeviceProvisioned() {
         return mDeviceProvisioned;
@@ -310,6 +314,37 @@ public abstract class BaseStatusBar extends SystemUI implements
             mUsersAllowingNotifications.clear();
             // ... and refresh all the notifications
             updateNotifications();
+        }
+    };
+
+    private class SettingsObserver extends ContentObserver {
+        public SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        public void observe() {
+            ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_CUSTOM_VALUES), false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_BLACKLIST_VALUES), false, this, UserHandle.USER_ALL);
+            update();
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            update();
+        }
+
+        private void update() {
+            ContentResolver resolver = mContext.getContentResolver();
+
+            final String dndString = Settings.System.getStringForUser(resolver,
+                    Settings.System.HEADS_UP_CUSTOM_VALUES, UserHandle.USER_CURRENT);
+            final String blackString = Settings.System.getStringForUser(resolver,
+                    Settings.System.HEADS_UP_BLACKLIST_VALUES, UserHandle.USER_CURRENT);
+            splitAndAddToArrayList(mDndList, dndString, "\\|");
+            splitAndAddToArrayList(mBlacklist, blackString, "\\|");
         }
     };
 
@@ -656,15 +691,15 @@ public abstract class BaseStatusBar extends SystemUI implements
         @Override
         public void onNotificationRankingUpdate(final RankingMap rankingMap) {
             if (DEBUG) Log.d(TAG, "onRankingUpdate");
-            if (rankingMap != null) {
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    updateNotificationRanking(rankingMap);
-                }
-            });
-        }                            }
-
+                if (rankingMap != null) {
+                    mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        updateNotificationRanking(rankingMap);
+                    }
+                });
+            }
+        }
     };
 
     private void updateCurrentProfilesCache() {
@@ -816,6 +851,8 @@ public abstract class BaseStatusBar extends SystemUI implements
             Slog.e(TAG, "Failed to register VR mode state listener: " + e);
         }
 
+        SettingsObserver observer = new SettingsObserver(mHandler);
+        observer.observe();
     }
 
     protected void notifyUserAboutHiddenNotifications() {
@@ -2526,6 +2563,10 @@ public abstract class BaseStatusBar extends SystemUI implements
             return false;
         }
 
+        if (isPackageBlacklisted(sbn.getPackageName()) || isPackageInDnd(getTopLevelPackage())) {
+            return false;
+        }
+
         if (mNotificationData.getImportance(sbn.getKey()) < IMPORTANCE_HIGH) {
             if (DEBUG) Log.d(TAG, "No peeking: unimportant notification: " + sbn.getKey());
             return false;
@@ -2544,6 +2585,34 @@ public abstract class BaseStatusBar extends SystemUI implements
     }
 
     protected abstract boolean isSnoozedPackage(StatusBarNotification sbn);
+
+    private String getTopLevelPackage() {
+        final ActivityManager am = (ActivityManager)
+                mContext.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> taskInfo = am.getRunningTasks(1);
+        ComponentName componentInfo = taskInfo.get(0).topActivity;
+        return componentInfo.getPackageName();
+    }
+
+    private boolean isPackageInDnd(String packageName) {
+        return mDndList.contains(packageName);
+    }
+
+    private boolean isPackageBlacklisted(String packageName) {
+        return mBlacklist.contains(packageName);
+    }
+
+    private void splitAndAddToArrayList(ArrayList<String> arrayList,
+            String baseString, String separator) {
+        // clear first
+        arrayList.clear();
+        if (baseString != null) {
+            final String[] array = TextUtils.split(baseString, separator);
+            for (String item : array) {
+                arrayList.add(item.trim());
+            }
+        }
+    }
 
     public void setInteracting(int barWindow, boolean interacting) {
         // hook for subclasses
