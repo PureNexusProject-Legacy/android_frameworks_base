@@ -62,4 +62,7 @@
 
   <!-- global actions -->
   <java-symbol type="id" name="option4" />
+  
+  <!-- google webview -->
+  <java-symbol type="string" name="config_alternateWebViewPackageName" />
 </resources>
