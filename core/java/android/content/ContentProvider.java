@@ -281,7 +281,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                 }
 
                 if (operation.isDeleteOperation()) {
-                    if (enforceDeletePermission(callingPkg, uri, null)
+                    if (enforceDeletePermission(callingPkg, uri)
                             != AppOpsManager.MODE_ALLOWED) {
                         throw new OperationApplicationException("App op not allowed", 0);
                     }
@@ -474,7 +474,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
             return AppOpsManager.MODE_ALLOWED;
         }
 
-        private int enforceDeletePermission(String callingPkg, Uri uri, IBinder callerToken) throws SecurityException {
+        private int enforceDeletePermission(String callingPkg, Uri uri) throws SecurityException {
             enforceWritePermissionInner(uri, null);
             if (mWriteOp != AppOpsManager.OP_NONE) {
                 int op = mWriteOp;
