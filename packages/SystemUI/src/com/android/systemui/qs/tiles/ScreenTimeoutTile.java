@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Open Source Project
+ * Copyright (C) 2015 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -236,7 +236,15 @@ public class ScreenTimeoutTile extends QSTile<ScreenTimeoutTile.TimeoutState> {
 
         state.visible = true;
         state.label = makeTimeoutSummaryString(newTimeout);
+        state.contentDescription = mContext.getString(
+                R.string.accessibility_quick_settings_screen_timeout, state.label);
         state.previousTimeout = newTimeout;
+    }
+
+    @Override
+    protected String composeChangeAnnouncement() {
+        return mContext.getString(R.string.accessibility_quick_settings_screen_timeout_changed,
+                mState.label);
     }
 
     private class RadioAdapter extends ArrayAdapter<String> {

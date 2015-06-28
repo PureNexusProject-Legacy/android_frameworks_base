@@ -73,12 +73,27 @@ public class LteTile extends QSTile<QSTile.BooleanState> {
             case Phone.NT_MODE_LTE_WCDMA:
             case Phone.NT_MODE_LTE_CDMA_EVDO_GSM_WCDMA:
                 state.visible = true;
+                state.value = true;
                 state.icon = ResourceIcon.get(R.drawable.ic_qs_lte_on);
+                state.contentDescription = mContext.getString(
+                        R.string.accessibility_quick_settings_lte_on);
                 break;
             default:
                 state.visible = true;
+                state.value = false;
                 state.icon = ResourceIcon.get(R.drawable.ic_qs_lte_off);
+                state.contentDescription = mContext.getString(
+                        R.string.accessibility_quick_settings_lte_off);
                 break;
+        }
+    }
+
+    @Override
+    protected String composeChangeAnnouncement() {
+        if (mState.value) {
+            return mContext.getString(R.string.accessibility_quick_settings_lte_changed_on);
+        } else {
+            return mContext.getString(R.string.accessibility_quick_settings_lte_changed_off);
         }
     }
 
