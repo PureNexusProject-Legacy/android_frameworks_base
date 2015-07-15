@@ -27,6 +27,10 @@
     <!-- Does the battery LED support multiple colors? -->
     <bool name="config_multiColorBatteryLed">false</bool>
 
+    <!-- Do the battery/notification LEDs support pulsing?
+         Used to decide if we show pulse settings -->
+    <bool name="config_ledCanPulse">true</bool>
+
     <!-- Vibrator pattern for notifications while alerts
          are disabled -->
     <integer-array name="config_notificationNoAlertsVibePattern">
