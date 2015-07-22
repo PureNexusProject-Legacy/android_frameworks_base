@@ -3937,6 +3937,12 @@ public final class Settings {
          */
         public static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
 
+        /**
+         * Statusbar PureNexus logo
+         * @hide
+         */
+        public static final String STATUS_BAR_PURE_LOGO = "status_bar_pure_logo";
+
         /** 
          * Whether to allow one finger quick settings expansion on the right side of the statusbar.
          * @hide
