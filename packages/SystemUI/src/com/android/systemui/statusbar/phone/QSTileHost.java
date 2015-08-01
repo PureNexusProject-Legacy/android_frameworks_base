@@ -54,6 +54,7 @@ import com.android.systemui.qs.tiles.NotificationsTile;
 import com.android.systemui.qs.tiles.RotationLockTile;
 import com.android.systemui.qs.tiles.ScreenOffTile;
 import com.android.systemui.qs.tiles.ScreenTimeoutTile;
+import com.android.systemui.qs.tiles.SwagTile;
 import com.android.systemui.qs.tiles.SyncTile;
 import com.android.systemui.qs.tiles.WifiTile;
 import com.android.systemui.settings.CurrentUserTracker;
@@ -307,6 +308,8 @@ public class QSTileHost implements QSTile.Host {
                 return new ScreenTimeoutTile(this);
             case QSConstants.TILE_SYNC:
                 return new SyncTile(this);
+            case QSConstants.TILE_SWAG:
+                return new SwagTile(this);
             case QSConstants.TILE_BRIGHTNESS:
                 return new BrightnessTile(this);
             case QSConstants.TILE_BATTERY_SAVER:

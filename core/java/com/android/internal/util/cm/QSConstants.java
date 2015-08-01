@@ -38,6 +38,7 @@ public class QSConstants {
     public static final String TILE_LTE = "lte";
     public static final String TILE_SCREEN_TIMEOUT = "screen_timeout";
     public static final String TILE_SYNC = "sync";
+    public static final String TILE_SWAG = "swag";
     public static final String TILE_BRIGHTNESS = "brightness";
     public static final String TILE_BATTERY_SAVER = "battery_saver";
     public static final String TILE_SCREEN_OFF = "screen_off";
@@ -69,6 +70,7 @@ public class QSConstants {
         TILES_AVAILABLE.add(TILE_LTE);
         TILES_AVAILABLE.add(TILE_SCREEN_TIMEOUT);
         TILES_AVAILABLE.add(TILE_SYNC);
+        TILES_AVAILABLE.add(TILE_SWAG);
         TILES_AVAILABLE.add(TILE_BRIGHTNESS);
         TILES_AVAILABLE.add(TILE_BATTERY_SAVER);
         TILES_AVAILABLE.add(TILE_SCREEN_OFF);
