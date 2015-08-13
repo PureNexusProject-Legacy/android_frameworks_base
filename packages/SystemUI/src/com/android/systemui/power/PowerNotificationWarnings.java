@@ -212,6 +212,7 @@ public class PowerNotificationWarnings implements PowerUI.WarningsUI {
                 .setSmallIcon(R.drawable.ic_power_saver)
                 .setContentTitle(mContext.getString(R.string.battery_saver_notification_title))
                 .setContentText(mContext.getString(R.string.battery_saver_notification_text))
+                .setOngoing(true)
                 .setShowWhen(false)
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .setColor(mContext.getResources().getColor(
