@@ -16,7 +16,13 @@
 
 package com.android.systemui.statusbar;
 
+import android.content.ContentResolver;
 import android.content.Context;
+import android.database.ContentObserver;
+import android.graphics.PorterDuff.Mode;
+import android.os.Handler;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.telephony.SubscriptionInfo;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -43,8 +49,13 @@ public class SignalClusterView
     static final String TAG = "SignalClusterView";
     static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
 
+    private static final int DEFAULT_COLOR = 0xffffffff;
+
     NetworkControllerImpl mNC;
     SecurityController mSC;
+    private SettingsObserver mObserver;
+
+    Handler mHandler;
 
     private boolean mNoSimsVisible = false;
     private boolean mVpnVisible = false;
@@ -65,6 +76,34 @@ public class SignalClusterView
     private int mWideTypeIconStartPadding;
     private int mSecondaryTelephonyPadding;
 
+    class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_NETWORK_COLOR),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_WIFI_COLOR),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_AIRPLANE_COLOR),
+                    false, this, UserHandle.USER_ALL);
+        }
+
+        void unobserve() {
+            mContext.getContentResolver().unregisterContentObserver(this);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            updateSettings();
+        }
+    }
+
     public SignalClusterView(Context context) {
         this(context, null);
     }
@@ -75,6 +114,8 @@ public class SignalClusterView
 
     public SignalClusterView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        mHandler = new Handler();
+        mObserver = new SettingsObserver(mHandler);
     }
 
     public void setNetworkController(NetworkControllerImpl nc) {
@@ -114,6 +155,8 @@ public class SignalClusterView
             mMobileSignalGroup.addView(state.mMobileGroup);
         }
 
+        mObserver.observe();
+        updateSettings();
         apply();
     }
 
@@ -147,6 +190,7 @@ public class SignalClusterView
         mWifiStrengthId = strengthIcon;
         mWifiDescription = contentDescription;
 
+        updateSettings();
         apply();
     }
 
@@ -162,6 +206,7 @@ public class SignalClusterView
         state.mMobileTypeDescription = typeContentDescription;
         state.mIsMobileTypeIconWide = isTypeIconWide;
 
+        updateSettings();
         apply();
     }
 
@@ -303,6 +348,41 @@ public class SignalClusterView
         }
 
         mNoSims.setVisibility(mNoSimsVisible ? View.VISIBLE : View.GONE);
+    }
+
+    public void updateSettings() {
+        ContentResolver resolver = mContext.getContentResolver();
+
+        int networkColor = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_NETWORK_COLOR,
+                DEFAULT_COLOR, UserHandle.USER_CURRENT);
+        int wifiColor = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_WIFI_COLOR,
+                DEFAULT_COLOR, UserHandle.USER_CURRENT);
+        int airplaneColor = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_AIRPLANE_COLOR,
+                DEFAULT_COLOR, UserHandle.USER_CURRENT);
+
+        if (mWifi != null) {
+            mWifi.setColorFilter(wifiColor, Mode.MULTIPLY);
+        }
+        if(mVpn != null) {
+            mVpn.setColorFilter(wifiColor, Mode.MULTIPLY);
+        }
+        for (PhoneState state : mPhoneStates) {
+            if (state.mMobile != null) {
+                state.mMobile.setColorFilter(networkColor, Mode.MULTIPLY);
+            }
+            if (state.mMobileType != null) {
+                state.mMobileType.setColorFilter(networkColor, Mode.MULTIPLY);
+            }
+        }
+        if(mNoSims != null) {
+            mNoSims.setColorFilter(networkColor, Mode.MULTIPLY);
+        }
+        if(mAirplane != null) {
+            mAirplane.setColorFilter(airplaneColor, Mode.MULTIPLY);
+        }
     }
 
     private class PhoneState {

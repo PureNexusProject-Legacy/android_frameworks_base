@@ -3266,6 +3266,24 @@ public final class Settings {
          public static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
 
         /**
+         * Color of Network signal/datatype/nosim icons
+         * @hide
+         */
+        public static final String STATUS_BAR_NETWORK_COLOR = "status_bar_network_color";
+
+        /**
+         * Color of Wifi/Vpn icons
+         * @hide
+         */
+        public static final String STATUS_BAR_WIFI_COLOR = "status_bar_wifi_color";
+
+        /**
+         * Color of airplane mode icon
+         * @hide
+         */
+        public static final String STATUS_BAR_AIRPLANE_COLOR = "status_bar_airplane_color";
+
+        /**
          * Whether the user has enabled headsup (Default 1)
          * HeadsUp is enabled by default within its Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED
          * setting. Avoid changing low level implementations and use a System setting to
