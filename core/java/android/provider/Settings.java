@@ -3212,6 +3212,12 @@ public final class Settings {
         public static final String NAVIGATION_BAR_SHOW = "navigation_bar_show";
 
         /**
+         * Color for nav bar buttons
+         * @hide
+         */
+        public static final String NAVIGATION_KEY_COLOR = "navigation_key_color";
+
+        /**
          * Whether to enable status and navigation bar color in battery saver mode.
          *
          * @hide

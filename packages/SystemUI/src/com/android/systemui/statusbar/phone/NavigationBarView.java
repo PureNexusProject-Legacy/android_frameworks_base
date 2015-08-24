@@ -34,6 +34,7 @@ import android.database.ContentObserver;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
@@ -138,6 +139,8 @@ public class NavigationBarView extends LinearLayout {
     private SettingsObserver mSettingsObserver;
     private boolean mShowDpadArrowKeys;
     private GestureDetector mDoubleTapGesture;
+
+    private int[] buttonIDs = {R.id.one, R.id.two, R.id.three, R.id.four, R.id.five, R.id.six, R.id.dpad_left, R.id.ime_switcher, R.id.dpad_right};
 
     private class NavTransitionListener implements TransitionListener {
         private boolean mBackTransitioning;
@@ -788,6 +791,21 @@ public class NavigationBarView extends LinearLayout {
         updateButtonListeners();
     }
 
+    public void colorButtons() {
+        int color = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.NAVIGATION_KEY_COLOR, -1);
+
+        for (int i=0; i < buttonIDs.length; i++) {
+            KeyButtonView button = (KeyButtonView) mCurrentView.findViewById(buttonIDs[i]);
+            if (button != null) {
+                button.setColorFilter(null);
+                if (color != -1) {
+                    button.setColorFilter(color);
+                }
+            }
+        }
+    }
+
     private void removeButtonListeners() {
         ViewGroup container = (ViewGroup) mCurrentView.findViewById(R.id.container);
         int viewCount = container.getChildCount();
@@ -875,6 +893,7 @@ public class NavigationBarView extends LinearLayout {
 
     public void updateSettings() {
         mEditBar.updateKeys();
+        colorButtons();
         removeButtonListeners();
         updateButtonListeners();
         setDisabledFlags(mDisabledFlags, true /* force */);
@@ -892,6 +911,9 @@ public class NavigationBarView extends LinearLayout {
             resolver.registerContentObserver(
                     Settings.System.getUriFor(Settings.System.NAVIGATION_BAR_MENU_ARROW_KEYS),
                     false, this);
+            resolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.NAVIGATION_KEY_COLOR),
+                    false, this);
 
             // intialize mModlockDisabled
             onChange(false);
@@ -903,15 +925,25 @@ public class NavigationBarView extends LinearLayout {
 
         @Override
         public void onChange(boolean selfChange) {
-            mShowDpadArrowKeys = Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_MENU_ARROW_KEYS, 0) != 0;
-            // reset saved side button visibilities
-            for (int i = 0; i < mSideButtonVisibilities.length; i++) {
-                for (int j = 0; j < mSideButtonVisibilities[i].length; j++) {
-                    mSideButtonVisibilities[i][j] = -1;
+            onChange(selfChange, null);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            if (!selfChange || uri == Settings.System.getUriFor(Settings.System.NAVIGATION_BAR_MENU_ARROW_KEYS)) {
+                mShowDpadArrowKeys = Settings.System.getInt(mContext.getContentResolver(),
+                        Settings.System.NAVIGATION_BAR_MENU_ARROW_KEYS, 0) != 0;
+                // reset saved side button visibilities
+                for (int i = 0; i < mSideButtonVisibilities.length; i++) {
+                    for (int j = 0; j < mSideButtonVisibilities[i].length; j++) {
+                        mSideButtonVisibilities[i][j] = -1;
+                    }
                 }
+                setNavigationIconHints(mNavigationIconHints, true);
             }
-            setNavigationIconHints(mNavigationIconHints, true);
+            if (!selfChange || uri == Settings.System.getUriFor(Settings.System.NAVIGATION_KEY_COLOR)) {
+                colorButtons();
+            }
         }
     }
 }
