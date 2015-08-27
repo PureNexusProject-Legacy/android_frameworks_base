@@ -38,6 +38,7 @@ public class BatteryLevelTextView extends TextView implements
 
     private int mStyle;
     private int mPercentMode;
+    private int mBattColor;
 
     public BatteryLevelTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -86,9 +87,10 @@ public class BatteryLevelTextView extends TextView implements
     }
 
     @Override
-    public void onBatteryStyleChanged(int style, int percentMode) {
+    public void onBatteryStyleChanged(int style, int percentMode, int battColor) {
         mStyle = style;
         mPercentMode = percentMode;
+        mBattColor = battColor;
         updateVisibility();
     }
 
@@ -123,6 +125,7 @@ public class BatteryLevelTextView extends TextView implements
         }
 
         if (showNextPercent || mForceShow) {
+            setTextColor(mBattColor);
             super.setVisibility(mRequestedVisibility);
         } else {
             super.setVisibility(GONE);
