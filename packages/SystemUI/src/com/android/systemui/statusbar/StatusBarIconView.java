@@ -23,6 +23,7 @@ import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.PorterDuff.Mode;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.Typeface;
@@ -331,10 +332,13 @@ public class StatusBarIconView extends AnimatedImageView {
         private static GlobalSettingsObserver sInstance;
         private ArrayList<StatusBarIconView> mIconViews = new ArrayList<StatusBarIconView>();
         private Context mContext;
+        private int mIconColor;
 
         GlobalSettingsObserver(Handler handler, Context context) {
             super(handler);
             mContext = context.getApplicationContext();
+            mIconColor = Settings.System.getIntForUser(mContext.getContentResolver(),
+            Settings.System.STATUS_BAR_SYSTEMICON_COLOR, -1, UserHandle.USER_CURRENT);
         }
 
         static GlobalSettingsObserver getInstance(Context context) {
@@ -349,6 +353,10 @@ public class StatusBarIconView extends AnimatedImageView {
                 observe();
             }
             mIconViews.add(sbiv);
+            sbiv.setColorFilter(null);
+            if (sbiv.mNotification == null && mIconColor != 0) {
+                sbiv.setColorFilter(mIconColor, Mode.MULTIPLY);
+            }
         }
 
         void detach(StatusBarIconView sbiv) {
@@ -362,6 +370,9 @@ public class StatusBarIconView extends AnimatedImageView {
             mContext.getContentResolver().registerContentObserver(
                     Settings.System.getUriFor(Settings.System.STATUS_BAR_NOTIF_COUNT),
                     false, this, UserHandle.USER_ALL);
+            mContext.getContentResolver().registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.STATUS_BAR_SYSTEMICON_COLOR),
+                    false, this, UserHandle.USER_ALL);
         }
 
         void unobserve() {
@@ -372,9 +383,15 @@ public class StatusBarIconView extends AnimatedImageView {
         public void onChange(boolean selfChange) {
             boolean showIconCount = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_NOTIF_COUNT, 0, UserHandle.USER_CURRENT) == 1;
+                    mIconColor = Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_SYSTEMICON_COLOR, -1, UserHandle.USER_CURRENT);               
             for (StatusBarIconView sbiv : mIconViews) {
                 sbiv.mShowNotificationCount = showIconCount;
                 sbiv.set(sbiv.mIcon, true);
+                sbiv.setColorFilter(null);
+                if (sbiv.mNotification == null && mIconColor != 0) {
+                    sbiv.setColorFilter(mIconColor, Mode.MULTIPLY);
+                }
             }
         }
     }

@@ -3336,6 +3336,12 @@ public final class Settings {
         public static final String STATUS_BAR_AIRPLANE_COLOR = "status_bar_airplane_color";
 
         /**
+         * Color of system icons
+         * @hide
+         */
+        public static final String STATUS_BAR_SYSTEMICON_COLOR = "status_bar_systemicon_color";
+
+        /**
          * Whether the user has enabled headsup (Default 1)
          * HeadsUp is enabled by default within its Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED
          * setting. Avoid changing low level implementations and use a System setting to
