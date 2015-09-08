@@ -94,7 +94,7 @@ public class ScreenTimeoutTile extends QSTile<ScreenTimeoutTile.TimeoutState> {
 
     @Override
     public DetailAdapter getDetailAdapter() {
-        return new LocationDetailAdapter();
+        return new ScreenTimeoutDetailAdapter();
     }
 
     private ContentObserver mObserver = new ContentObserver(mHandler) {
@@ -269,7 +269,8 @@ public class ScreenTimeoutTile extends QSTile<ScreenTimeoutTile.TimeoutState> {
         }
 
     }
-    private class LocationDetailAdapter implements DetailAdapter, AdapterView.OnItemClickListener {
+    private class ScreenTimeoutDetailAdapter implements DetailAdapter,
+            AdapterView.OnItemClickListener {
         private QSDetailItemsList mItems;
 
         @Override
