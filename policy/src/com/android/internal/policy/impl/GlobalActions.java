@@ -228,8 +228,12 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
      * @return A new dialog.
      */
     private GlobalActionsDialog createDialog() {
-        mSilentModeAction = new SilentModeTriStateAction(mContext, mAudioManager, mHandler);
-
+        // Simple toggle style if there's no vibrator, otherwise use a tri-state
+        if (!mHasVibrator) {
+            mSilentModeAction = new SilentModeToggleAction();
+        } else {
+            mSilentModeAction = new SilentModeTriStateAction(mContext, mAudioManager, mHandler);
+        }
         mAirplaneModeOn = new ToggleAction(
                 R.drawable.ic_lock_airplane_mode,
                 R.drawable.ic_lock_airplane_mode_off,
@@ -710,12 +714,22 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
     }
 
     private void prepareDialog() {
+        refreshSilentMode();
         mAirplaneModeOn.updateState(mAirplaneState);
         mAdapter.notifyDataSetChanged();
         mDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
         if (mShowSilentToggle) {
             IntentFilter filter = new IntentFilter(AudioManager.RINGER_MODE_CHANGED_ACTION);
             mContext.registerReceiver(mRingerModeReceiver, filter);
+        }
+    }
+
+    private void refreshSilentMode() {
+        if (!mHasVibrator) {
+            final boolean silentModeOn =
+                    mAudioManager.getRingerMode() != AudioManager.RINGER_MODE_NORMAL;
+            ((ToggleAction)mSilentModeAction).updateState(
+                    silentModeOn ? ToggleAction.State.On : ToggleAction.State.Off);
         }
     }
 
@@ -733,6 +747,9 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
 
     /** {@inheritDoc} */
     public void onClick(DialogInterface dialog, int which) {
+        if (!(mAdapter.getItem(which) instanceof SilentModeTriStateAction)) {
+            dialog.dismiss();
+        }
         mAdapter.getItem(which).onPress();
     }
 
@@ -1062,7 +1079,7 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
         }
     }
 
-    private final class SilentModeToggleAction extends ToggleAction {
+    private class SilentModeToggleAction extends ToggleAction {
         public SilentModeToggleAction() {
             super(R.drawable.ic_audio_vol_mute,
                     R.drawable.ic_audio_vol,
@@ -1073,9 +1090,9 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
 
         void onToggle(boolean on) {
             if (on) {
-                mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_SILENT);
+                mAudioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT);
             } else {
-                mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
+                mAudioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
             }
         }
 
@@ -1123,7 +1140,8 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
             View v = inflater.inflate(R.layout.global_actions_silent_mode, parent, false);
 
             int ringerMode = mAudioManager.getRingerModeInternal();
-            int zenMode = Global.getInt(mContext.getContentResolver(), Global.ZEN_MODE, Global.ZEN_MODE_OFF);
+            int zenMode = Global.getInt(mContext.getContentResolver(), Global.ZEN_MODE,
+                    Global.ZEN_MODE_OFF);
             int selectedIndex = 0;
             if (zenMode != Global.ZEN_MODE_OFF) {
                 if (zenMode == Global.ZEN_MODE_NO_INTERRUPTIONS) {
@@ -1139,7 +1157,6 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
 
             for (int i = 0; i < ITEM_IDS.length; i++) {
                 View itemView = v.findViewById(ITEM_IDS[i]);
-                // TODO dont hardcode 2 here
                 if (!mHasVibrator && i == 2) {
                     itemView.setVisibility(View.GONE);
                     continue;
@@ -1172,16 +1189,17 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
 
         public void onClick(View v) {
             if (!(v.getTag() instanceof Integer)) return;
+
             int index = (Integer) v.getTag();
             if (index == 0 || index == 1) {
                 int zenMode = index == 0
-                            ? Global.ZEN_MODE_NO_INTERRUPTIONS
-                            : Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
+                        ? Global.ZEN_MODE_NO_INTERRUPTIONS
+                        : Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
                 Global.putInt(mContext.getContentResolver(), Global.ZEN_MODE, zenMode);
             } else {
                 Global.putInt(mContext.getContentResolver(), Global.ZEN_MODE, Global.ZEN_MODE_OFF);
             }
-            // must be after zen mode!
+
             if (index == 2 || index == 3) {
                 int ringerMode = indexToRingerMode(index);
                 mAudioManager.setRingerModeInternal(ringerMode);
@@ -1262,6 +1280,7 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
                 }
                 break;
             case MESSAGE_REFRESH:
+                refreshSilentMode();
                 mAdapter.notifyDataSetChanged();
                 break;
             case MESSAGE_SHOW:
