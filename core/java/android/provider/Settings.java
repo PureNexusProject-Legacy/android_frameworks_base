@@ -4533,6 +4533,12 @@ public final class Settings {
         public static final String LOCKSCREEN_TARGETS = "lockscreen_target_actions";
 
         /**
+         * Long press on lock screen lock icon to launch torch
+         * @hide
+         */
+        public static final String LONG_PRESS_LOCK_ICON_TORCH = "long_press_lock_icon_torch";
+
+        /**
          * Comma-separated list of location providers that activities may access. Do not rely on
          * this value being present in settings.db or on ContentObserver notifications on the
          * corresponding Uri.

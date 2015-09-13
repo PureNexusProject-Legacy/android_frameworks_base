@@ -30,11 +30,15 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.InsetDrawable;
+import android.hardware.ITorchService;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.telecom.TelecomManager;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -106,6 +110,9 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     private final TrustDrawable mTrustDrawable;
     private final Interpolator mLinearOutSlowInInterpolator;
     private int mLastUnlockIconRes = 0;
+
+    private boolean mLongClickToForceLock;
+    private boolean mLongClickTorch;
 
     public KeyguardBottomAreaView(Context context) {
         this(context, null);
@@ -346,10 +353,12 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
         boolean clickToUnlock = mAccessibilityController.isTouchExplorationEnabled();
         boolean clickToForceLock = mUnlockMethodCache.isTrustManaged()
                 && !mAccessibilityController.isAccessibilityEnabled();
-        boolean longClickToForceLock = mUnlockMethodCache.isTrustManaged()
+        mLongClickToForceLock = mUnlockMethodCache.isTrustManaged()
                 && !clickToForceLock;
+        mLongClickTorch = Settings.Secure.getIntForUser(getContext().getContentResolver(),
+                Settings.Secure.LONG_PRESS_LOCK_ICON_TORCH, 0, UserHandle.USER_CURRENT) == 1;
         mLockIcon.setClickable(clickToForceLock || clickToUnlock);
-        mLockIcon.setLongClickable(longClickToForceLock);
+        mLockIcon.setLongClickable(mLongClickToForceLock || mLongClickTorch);
         mLockIcon.setFocusable(mAccessibilityController.isAccessibilityEnabled());
     }
 
@@ -371,8 +380,18 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
 
     @Override
     public boolean onLongClick(View v) {
-        handleTrustCircleClick();
-        return true;
+        if (mLongClickTorch && !mLongClickToForceLock) {
+            try {
+                ITorchService torchService = ITorchService.Stub.asInterface(
+                        ServiceManager.getService(Context.TORCH_SERVICE));
+                torchService.toggleTorch();
+            } catch (RemoteException e) {
+            }
+            return true;
+        } else {
+            handleTrustCircleClick();
+            return true;
+        }
     }
 
     private void handleTrustCircleClick() {
