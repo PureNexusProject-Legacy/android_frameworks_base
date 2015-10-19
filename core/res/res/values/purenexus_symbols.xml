@@ -36,6 +36,11 @@
   <!-- Doze mode -->
   <java-symbol type="bool" name="config_doze_enabled_by_default" />
 
+  <!-- Last app switch animations -->
+  <java-symbol type="anim" name="last_app_in" />
+  <java-symbol type="anim" name="last_app_out" />
+
+
   <!-- Notification and battery light -->
   <java-symbol type="bool" name="config_intrusiveNotificationLed" />
   <java-symbol type="bool" name="config_multiColorNotificationLed" />
