@@ -3845,6 +3845,12 @@ public final class Settings {
         public static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
 
         /**
+         * Whether long press recents goes to last app
+         * @hide
+         */
+        public static final String RECENTS_LONGPRESS = "recents_longpress";
+
+        /**
          * location of the clear all recents button
          * Show search bar in recents
          * @hide
