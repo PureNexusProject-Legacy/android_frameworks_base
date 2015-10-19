@@ -59,6 +59,7 @@ public class KeyButtonView extends ImageView {
     private boolean mInEditMode;
     private AudioManager mAudioManager;
     private boolean mGestureAborted;
+    private boolean mPerformedLongClick;
 
     private final Runnable mCheckLongPress = new Runnable() {
         public void run() {
@@ -72,6 +73,7 @@ public class KeyButtonView extends ImageView {
                     postDelayed(mCheckLongPress, ViewConfiguration.getKeyRepeatDelay());
                 } else if (isLongClickable()) {
                     // Just an old-fashioned ImageView
+                    mPerformedLongClick = true;
                     performLongClick();
                 } else {
                     sendEvent(KeyEvent.ACTION_DOWN, KeyEvent.FLAG_LONG_PRESS);
@@ -266,7 +268,7 @@ public class KeyButtonView extends ImageView {
                     }
                 } else {
                     // no key code, just a regular ImageView
-                    if (doIt) {
+                    if (doIt && !mPerformedLongClick) {
                         performClick();
                     }
                 }
@@ -276,6 +278,7 @@ public class KeyButtonView extends ImageView {
                 if (supportsLongPress()) {
                     removeCallbacks(mCheckLongPress);
                 }
+                mPerformedLongClick = false;
                 break;
         }
 
