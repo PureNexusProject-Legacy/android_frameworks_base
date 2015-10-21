@@ -3420,6 +3420,12 @@ public final class Settings {
                 "notification_light_screen_on_enable";
 
         /**
+         * Boolean value on whether to show weather in the statusbar
+         * @hide
+         */
+        public static final String STATUS_BAR_SHOW_WEATHER = "status_bar_show_weather";
+
+        /**
          * Boolean value whether to link ringtone and notification volume
          * @hide
          */
