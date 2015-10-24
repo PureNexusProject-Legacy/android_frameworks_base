@@ -3269,6 +3269,18 @@ public final class Settings {
         public static final String BATTERY_LIGHT_PULSE = "battery_light_pulse";
 
         /**
+         * Whether to show low battery notification
+         * @hide
+         */
+        public static final String BATTERY_LOW_NOTIFICATION = "battery_low_notification";
+
+        /**
+         * Whether to show battery saver notification
+         * @hide
+         */
+        public static final String BATTERY_SAVER_NOTIFICATION = "battery_saver_notification";
+
+        /**
          * Enable/disable overwrite default value for ambient display
          * @hide
          */
