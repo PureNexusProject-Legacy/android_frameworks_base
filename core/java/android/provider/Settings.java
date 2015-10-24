@@ -3449,6 +3449,12 @@ public final class Settings {
          */
         public static final String RECENTS_LONGPRESS = "recents_longpress";
 
+        /** 
+         * Status bar battery %
+         * @hide
+         */
+        public static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+
         /**
          * Boolean value on whether to show weather in the statusbar
          * @hide
@@ -3542,6 +3548,7 @@ public final class Settings {
             LOCK_TO_APP_ENABLED,
             NOTIFICATION_SOUND,
             NOTIFICATION_LIGHT_SCREEN_ON,
+            STATUS_BAR_SHOW_BATTERY_PERCENT,
             ALLOW_LIGHTS
         };
 
