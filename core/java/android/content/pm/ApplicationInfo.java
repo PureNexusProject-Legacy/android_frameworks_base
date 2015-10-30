@@ -655,7 +655,7 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
      */
     public int installLocation = PackageInfo.INSTALL_LOCATION_UNSPECIFIED;
 
-    /*
+    /**
      * Is given application theme agnostic, i.e. behaves properly when default theme is changed.
      * @hide
      */
