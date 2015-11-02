@@ -550,6 +550,7 @@ public class AudioService extends IAudioService.Stub {
     private AudioManagerInternal.RingerModeDelegate mRingerModeDelegate;
     private VolumePolicy mVolumePolicy = VolumePolicy.DEFAULT;
     private long mLoweredFromNormalToVibrateTime;
+    private boolean mVolumeKeysControlRingStream;
     private boolean mLinkNotificationWithVolume;
 
     // Intent "extra" data keys.
@@ -1023,6 +1024,10 @@ public class AudioService extends IAudioService.Stub {
 
             updateRingerModeAffectedStreams();
             readDockAudioSettings(cr);
+
+            mVolumeKeysControlRingStream = Settings.System.getIntForUser(cr,
+                    Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, 1,
+                    UserHandle.USER_CURRENT) == 1;
         }
 
         mMuteAffectedStreams = System.getIntForUser(cr,
@@ -3404,10 +3409,16 @@ public class AudioService extends IAudioService.Stub {
                     if (DEBUG_VOL)
                         Log.v(TAG, "getActiveStreamType: Forcing STREAM_MUSIC stream active");
                     return AudioSystem.STREAM_MUSIC;
-                    } else {
+                } else {
+                    if (mVolumeKeysControlRingStream) {
                         if (DEBUG_VOL)
                             Log.v(TAG, "getActiveStreamType: Forcing STREAM_RING b/c default");
                         return AudioSystem.STREAM_RING;
+                    } else {
+                        if (DEBUG_VOL)
+                            Log.v(TAG, "getActiveStreamType: Forcing STREAM_MUSIC b/c default");
+                        return AudioSystem.STREAM_MUSIC;
+                    }
                 }
             } else if (isAfMusicActiveRecently(0)) {
                 if (DEBUG_VOL)
@@ -4491,6 +4502,8 @@ public class AudioService extends IAudioService.Stub {
             mContentResolver.registerContentObserver(Settings.Global.getUriFor(
                 Settings.Global.DOCK_AUDIO_MEDIA_ENABLED), false, this);
             mContentResolver.registerContentObserver(Settings.System.getUriFor(
+                Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM), false, this);
+            mContentResolver.registerContentObserver(Settings.System.getUriFor(
                 Settings.System.VOLUME_LINK_NOTIFICATION), false, this);
         }
 
@@ -4510,6 +4523,10 @@ public class AudioService extends IAudioService.Stub {
                     setRingerModeInt(getRingerModeInternal(), false);
                 }
                 readDockAudioSettings(mContentResolver);
+
+                mVolumeKeysControlRingStream = Settings.System.getIntForUser(mContentResolver,
+                        Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, 1,
+                        UserHandle.USER_CURRENT) == 1;
 
                 mLinkNotificationWithVolume = Settings.System.getIntForUser(mContentResolver,
                         Settings.System.VOLUME_LINK_NOTIFICATION, 1, UserHandle.USER_CURRENT) == 1;
