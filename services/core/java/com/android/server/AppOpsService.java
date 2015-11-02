@@ -2034,6 +2034,7 @@ public class AppOpsService extends IAppOpsService.Stub {
             return EmptyArray.STRING;
         }
         return packageNames;
+    }
 
     private void readPolicy() {
         if (mStrictEnable) {
