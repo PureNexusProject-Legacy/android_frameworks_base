@@ -3364,6 +3364,12 @@ public final class Settings {
         public static final String DOZE_SCREEN_BRIGHTNESS = "doze_screen_brightness";
 
         /**
+         * Enable double tap gesture anywhere on the lock screen put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_ANYWHERE = "double_tap_sleep_anywhere";
+
+        /**
          * Enable statusbar double tap gesture on to put device to sleep
          * @hide
          */
