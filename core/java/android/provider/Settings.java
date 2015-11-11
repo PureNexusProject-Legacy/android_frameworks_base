@@ -3322,6 +3322,12 @@ public final class Settings {
         public static final String BATTERY_SAVER_NOTIFICATION = "battery_saver_notification";
 
         /**
+         * Enable double tap gesture anywhere on the lock screen put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_ANYWHERE = "double_tap_sleep_anywhere";
+
+        /**
          * Enable statusbar double tap gesture on to put device to sleep
          * @hide
          */
