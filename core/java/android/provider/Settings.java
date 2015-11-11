@@ -3401,6 +3401,12 @@ public final class Settings {
         public static final String DOUBLE_TAP_SLEEP_ANYWHERE = "double_tap_sleep_anywhere";
 
         /**
+         *  Enable navigation bar double tap gesture on to put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_NAVBAR = "double_tap_sleep_navbar";
+
+        /**
          * Enable statusbar double tap gesture on to put device to sleep
          * @hide
          */
