@@ -66,6 +66,9 @@
   <!-- lockscreen Wallpaper -->
   <java-symbol type="anim" name="lock_screen_wallpaper_exit_noop" />
 
+  <!-- Vendor warning -->
+  <java-symbol type="string" name="system_error_vendorprint" />
+
   <!-- ADB notification -->
   <java-symbol type="string" name="adb_net_active_notification_title" />
   <java-symbol type="string" name="adb_both_active_notification_title" />
