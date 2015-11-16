@@ -14,14 +14,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <array name="batterymeter_inverted_bolt_points" translatable="false">
-        <item>743</item><item>73</item>
-        <item>743</item><item>292</item>
-        <item>442</item><item>201</item>
-        <item>442</item><item>400</item>
-        <item>0</item><item>20</item>
-        <item>369</item><item>157</item>
-        <item>369</item><item>0</item>
-    </array>
+<resources>
+    <!-- Floating action button -->
+    <color name="fab_color">#ff009688</color>
+    <color name="floating_action_button_icon_color">#ffffff</color>
 </resources>
