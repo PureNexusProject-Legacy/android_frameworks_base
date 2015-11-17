@@ -69,6 +69,10 @@
   <!-- Vendor warning -->
   <java-symbol type="string" name="system_error_vendorprint" />
 
+  <!-- PureNexus is starting -->
+  <java-symbol type="string" name="android_start_title_pn" />
+  <java-symbol type="string" name="android_upgrading_title_pn" />
+
   <!-- ADB notification -->
   <java-symbol type="string" name="adb_net_active_notification_title" />
   <java-symbol type="string" name="adb_both_active_notification_title" />
