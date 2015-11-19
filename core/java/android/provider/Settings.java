@@ -3681,12 +3681,6 @@ public final class Settings {
         public static final String STATUS_BAR_SHOW_CARRIER = "status_bar_show_carrier";
 
         /**
-         * Carrier Label Custom Color
-         * @hide
-         */
-        public static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
-
-        /**
          * Boolean value on whether to show weather in the statusbar
          * @hide
          */
