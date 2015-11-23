@@ -81,6 +81,9 @@
   <!-- lockscreen Wallpaper -->
   <java-symbol type="anim" name="lock_screen_wallpaper_exit_noop" />
 
+  <!-- correct sensor handling -->
+  <java-symbol type="bool" name="config_useSystemClockforSensors" />
+  
   <!-- Vendor warning -->
   <java-symbol type="string" name="system_error_vendorprint" />
 
