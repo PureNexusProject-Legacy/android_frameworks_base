@@ -3496,6 +3496,13 @@ public final class Settings {
                 "lockscreen_quick_unlock_control";
 
         /**
+         * Control whether the accelerometer will be used to change lockscreen
+         * orientation.  If 0, it will not be used; if 1, it will be used by default.
+         * @hide
+         */
+        public static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
+
+        /**
          * Whether to show the weather info on the lock screen
          * @hide
          */
