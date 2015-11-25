@@ -3318,6 +3318,12 @@ public final class Settings {
         public static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
 
         /**
+         * Whether national data roaming should be used.
+         * @hide
+         */
+        public static final String MVNO_ROAMING = "mvno_roaming";
+
+        /**
          * What color to use for the notification LED by default
          * @hide
          */
