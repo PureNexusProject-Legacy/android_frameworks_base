@@ -3760,6 +3760,12 @@ public final class Settings {
         public static final String VOLBTN_MUSIC_CONTROLS = "volbtn_music_controls";
 
         /**
+         * Boolean value whether volume down in silent can enter zen mode
+         * @hide
+         */
+        public static final String VOLUME_DOWN_ZEN = "volume_down_zen";
+
+        /**
          * Volume keys control cursor in text fields (default is 0)
          * 0 - Disabled
          * 1 - Volume up/down moves cursor left/right
