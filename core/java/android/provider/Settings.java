@@ -3788,6 +3788,12 @@ public final class Settings {
         public static final String VOLUME_LINK_NOTIFICATION = "volume_link_notification";
 
         /**
+         * Boolean value whether volume up in zen mode can exit zen mode
+         * @hide
+         */
+        public static final String VOLUME_UP_LEAVE_ZEN = "volume_up_leave_zen";
+
+        /**
          * Whether to wake the screen with the volume keys, the value is boolean.
          * @hide
          */
