@@ -72,12 +72,6 @@
                     android:gravity="center"
                     android:visibility="gone"
                     />
-                <com.android.systemui.statusbar.StatusBarIconView android:id="@+id/moreIcon"
-                    android:layout_width="@dimen/status_bar_icon_size"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/stat_notify_more"
-                    android:visibility="gone"
-                    />
                 <com.android.systemui.statusbar.widget.CarrierLabel
                     android:id="@+id/statusbar_carrier_text"
                     android:layout_width="wrap_content"
@@ -92,7 +86,14 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"/>
+                    android:orientation="horizontal"
+                    />
+                <com.android.systemui.statusbar.StatusBarIconView android:id="@+id/moreIcon"
+                    android:layout_width="@dimen/status_bar_icon_size"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/stat_notify_more"
+                    android:visibility="gone"
+                    />
             </com.android.keyguard.AlphaOptimizedLinearLayout>
         </com.android.systemui.statusbar.AlphaOptimizedFrameLayout>
 
@@ -142,11 +143,11 @@
         <com.android.systemui.statusbar.policy.ClockCenter
             android:id="@+id/center_clock"
             android:textAppearance="@style/TextAppearance.StatusBar.Clock"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:singleLine="true"
-            android:gravity="center"
             android:visibility="gone"
+            android:singleLine="true"
             />
     </com.android.keyguard.AlphaOptimizedLinearLayout>
 
