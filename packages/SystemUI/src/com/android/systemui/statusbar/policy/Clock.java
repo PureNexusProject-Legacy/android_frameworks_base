@@ -109,9 +109,6 @@ public class Clock extends TextView implements DemoMode {
                     .getUriFor(Settings.System.STATUSBAR_CLOCK_STYLE), false,
                     this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System
-                    .getUriFor(Settings.System.STATUSBAR_CLOCK_COLOR), false,
-                    this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY), false,
                     this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System
