@@ -3269,19 +3269,6 @@ public final class Settings {
         public static final String BATTERY_LIGHT_PULSE = "battery_light_pulse";
 
         /**
-         * Whether to show low battery notification
-         * @hide
-         */
-        public static final String BATTERY_LOW_NOTIFICATION = "battery_low_notification";
-
-        /**
-         * Whether to enable status and navigation bar color in battery saver mode.
-         *
-         * @hide
-         */
-        public static final String BATTERY_SAVER_MODE_COLOR = "battery_save_mode_color";
-
-        /**
          * The OpenCNAM paid account ID
          * @hide
          */
