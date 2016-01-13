@@ -93,7 +93,6 @@ public class NavigationBarView extends LinearLayout {
     int mNavigationIconHints = 0;
 
     private BackButtonDrawable mBackIcon, mBackLandIcon;
-    private Drawable mBackAltIcon, mBackAltLandIcon;
     private Drawable mRecentIcon;
     private Drawable mRecentLandIcon;
     private Drawable mHomeIcon, mHomeLandIcon;
@@ -333,13 +332,11 @@ public class NavigationBarView extends LinearLayout {
 
     private void getIcons(Resources res) {
         mBackIcon = new BackButtonDrawable(res.getDrawable(R.drawable.ic_sysbar_back));
-        mBackLandIcon = new BackButtonDrawable(res.getDrawable(R.drawable.ic_sysbar_back_land));
-        mBackAltIcon = res.getDrawable(R.drawable.ic_sysbar_back_ime);
-        mBackAltLandIcon = mBackAltIcon;
+	    mBackLandIcon = mBackIcon;
         mRecentIcon = res.getDrawable(R.drawable.ic_sysbar_recent);
-        mRecentLandIcon = res.getDrawable(R.drawable.ic_sysbar_recent_land);
+        mRecentLandIcon = mRecentIcon;
         mHomeIcon = res.getDrawable(R.drawable.ic_sysbar_home);
-        mHomeLandIcon = res.getDrawable(R.drawable.ic_sysbar_home_land);
+        mHomeLandIcon = mHomeIcon;
     }
 
     public void updateResources(Resources res) {
