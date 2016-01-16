@@ -3419,6 +3419,16 @@ public final class Settings {
         public static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
 
         /**
+         * Immersive recents options
+         * 0 = Default AOSP look
+         * 1 = Statusbar only
+         * 2 = Navbar only
+         * 3 = Fullscreen
+         * @hide
+         */
+        public static final String IMMERSIVE_RECENTS = "immersive_recents";
+
+        /**
          * whether to enable torch on lockscreen
          * @hide
          */
@@ -3649,12 +3659,6 @@ public final class Settings {
          * @hide
          */
         public static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
-
-        /**
-         * Whether to display recents in full screen
-         * @hide
-         */
-        public static final String RECENTS_FULL_SCREEN = "recents_full_screen";
 
         /**
          * Whether long press recents goes to last app
