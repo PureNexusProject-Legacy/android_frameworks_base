@@ -3437,6 +3437,12 @@ public final class Settings {
         public static final String HEADS_UP_BLACKLIST_VALUES = "heads_up_blacklist_values";
 
         /**
+         * Which applications to post all notification to heads up
+         * @hide
+         */
+        public static final String HEADS_UP_WHITELIST_VALUES = "heads_up_whitelist_values";
+
+        /**
          * Immersive recents options
          * 0 = Default AOSP look
          * 1 = Statusbar only
