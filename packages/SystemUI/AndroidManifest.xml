@@ -134,6 +134,11 @@
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
 
+    <!-- Themes tile -->
+    <uses-permission android:name="android.permission.ACCESS_THEME_MANAGER" />
+    <uses-permission android:name="android.permission.READ_THEMES" />
+    <uses-permission android:name="android.permission.WRITE_THEMES" />
+
     <!-- Assist -->
     <uses-permission android:name="android.permission.ACCESS_VOICE_INTERACTION_SERVICE" />
 
