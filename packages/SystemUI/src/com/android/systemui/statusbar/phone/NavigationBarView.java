@@ -415,13 +415,10 @@ public class NavigationBarView extends LinearLayout {
                                 && !mShowDpadArrowKeys;
         getImeSwitchButton().setVisibility(showImeButton ? View.VISIBLE : View.INVISIBLE);
 
-
         setDisabledFlags(mDisabledFlags, true);
 
         // Update menu button in case the IME state has changed.
         setMenuVisibility(mShowMenu, true);
-
-        setDisabledFlags(mDisabledFlags, true);
 
         if (mShowDpadArrowKeys) { // overrides IME button
             final boolean showingIme = ((mNavigationIconHints
