@@ -73,6 +73,11 @@
     <!-- Brightness QS Tile -->
     <string name="quick_settings_brightness">Brightness</string>
 
+    <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Caffeine</string>
+    <string name="accessibility_quick_settings_caffeine_off">Caffeine off.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Caffeine on.</string>
+
     <!-- Expanded Desktop QS Tile -->
     <string name="quick_settings_expanded_desktop">Expanded</string>
     <string name="quick_settings_expanded_desktop_off">Normal</string>
