@@ -6257,14 +6257,13 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     mAllowAllRotations = mContext.getResources().getBoolean(
                             com.android.internal.R.bool.config_allowAllRotations) ? 1 : 0;
                 }
-
-                // use sensor orientation if it's forced, or if the user has allowed it
-                boolean useSensorRotation =
-                        orientation == ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
-                        || orientation == ActivityInfo.SCREEN_ORIENTATION_FULL_USER
-                        || RotationPolicy.isRotationAllowed(sensorRotation, mUserRotationAngles,
-                                mAllowAllRotations != 0);
-                if (useSensorRotation) {
+                boolean allowed = true;
+                if (orientation != ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
+                        && orientation != ActivityInfo.SCREEN_ORIENTATION_FULL_USER) {
+                   allowed = RotationPolicy.isRotationAllowed(sensorRotation,
+                           mUserRotationAngles, mAllowAllRotations != 0);
+                }
+                if (allowed) {
                     preferredRotation = sensorRotation;
                 } else {
                     preferredRotation = lastRotation;
