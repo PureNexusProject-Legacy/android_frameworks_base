@@ -130,15 +130,6 @@
     <!-- Weather -->
     <uses-permission android:name="com.cyanogenmod.lockclock.permission.READ_WEATHER" />
 
-    <!-- Sync tile -->
-    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
-
-    <!-- Themes tile -->
-    <uses-permission android:name="android.permission.ACCESS_THEME_MANAGER" />
-    <uses-permission android:name="android.permission.READ_THEMES" />
-    <uses-permission android:name="android.permission.WRITE_THEMES" />
-
     <!-- Assist -->
     <uses-permission android:name="android.permission.ACCESS_VOICE_INTERACTION_SERVICE" />
 
@@ -212,6 +203,14 @@
         <activity android:name=".usb.UsbStorageActivity"
                   android:label="@*android:string/usb_storage_activity_title"
                   android:excludeFromRecents="true">
+        </activity>
+
+        <activity android:name=".tuner.QsActivity"
+                  android:enabled="true"
+                  android:theme="@android:style/Theme.Material.Settings"
+                  android:label="@string/systemui_tuner_qs_title"
+                  android:process=":tuner"
+                  android:exported="true">
         </activity>
 
         <activity android:name=".tuner.TunerActivity"
