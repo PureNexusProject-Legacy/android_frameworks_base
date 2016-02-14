@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
-package com.android.internal.util.pure;
+package com.android.internal.util.purenexus;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.net.ConnectivityManager;
+
+import java.util.Locale;
 
 public class PUREUtils {
 
@@ -24,4 +28,16 @@ public class PUREUtils {
         return context.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
     }
+
+    public static boolean isChineseLanguage() {
+       return Resources.getSystem().getConfiguration().locale.getLanguage().startsWith(
+               Locale.CHINESE.getLanguage());
+    }
+
+    public static boolean isWifiOnly(Context context) {
+        ConnectivityManager cm = (ConnectivityManager)context.getSystemService(
+                Context.CONNECTIVITY_SERVICE);
+        return (cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE) == false);
+    }
+
 }

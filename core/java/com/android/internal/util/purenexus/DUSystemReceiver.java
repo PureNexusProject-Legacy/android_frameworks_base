@@ -20,7 +20,7 @@
  * packages by overriding onExemptBroadcast(Context context, String packageName)
  */
 
-package com.android.internal.util.pure;
+package com.android.internal.util.purenexus;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

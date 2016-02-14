@@ -40,9 +40,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.internal.util.pure.*;
-import com.android.internal.util.pure.DUSystemReceiver;
-import com.android.internal.util.pure.DUPackageMonitor.PackageState;
+import com.android.internal.util.purenexus.*;
+import com.android.internal.util.purenexus.DUSystemReceiver;
+import com.android.internal.util.purenexus.DUPackageMonitor.PackageState;
 import com.android.systemui.R;
 import com.android.systemui.statusbar.phone.KeyguardStatusBarView;
 import com.android.systemui.statusbar.phone.PhoneStatusBar;
