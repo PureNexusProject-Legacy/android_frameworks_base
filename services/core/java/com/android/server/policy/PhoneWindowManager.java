@@ -85,8 +85,8 @@ import android.service.dreams.IDreamManager;
 import android.speech.RecognizerIntent;
 import android.telecom.TelecomManager;
 
-import com.android.internal.util.cm.ActionUtils;
-import com.android.internal.util.pure.DimensionConverter;
+import com.android.internal.util.purenexus.ActionUtils;
+import com.android.internal.util.purenexus.DimensionConverter;
 import android.util.DisplayMetrics;
 import android.util.EventLog;
 import android.util.Log;
@@ -977,7 +977,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         // taken over the whole screen.
         boolean panic = mImmersiveModeConfirmation.onPowerKeyDown(interactive,
                 SystemClock.elapsedRealtime(), isImmersiveMode(mLastSystemUiFlags));
-        if (panic) {
+        if (panic && !WindowManagerPolicyControl.isImmersiveFiltersActive()) {
             mHandler.post(mHiddenNavPanic);
         }
 
@@ -5249,9 +5249,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 if (mUseTvRouting) {
                     // On TVs volume keys never go to the foreground app
                     result &= ~ACTION_PASS_TO_USER;
-                } else if (isWakeKey && mVolumeWakeScreen) {
+                }
                 // Eat all down & up keys when using volume wake.
                 // This disables volume control, music control, and "beep" on key up.
+                if (isWakeKey && mVolumeWakeScreen) {
                     mVolumeWakeTriggered = true;
                     break;
                 } else if (mVolumeWakeTriggered && !down) {
@@ -5321,7 +5322,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     }
                 }
 
-                if ((result & ACTION_PASS_TO_USER) == 0) {
+                // Disable music and volume control when used as wake key
+                if ((result & ACTION_PASS_TO_USER) == 0 && !mVolumeWakeScreen) {
                     boolean mayChangeVolume = false;
 
                     if (isMusicActive()) {
@@ -5358,18 +5360,20 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         }
                     }
 
-                    if (mUseTvRouting) {
-                        dispatchDirectAudioEvent(event);
-                    } else if (mayChangeVolume) {
-                        // If we aren't passing to the user and no one else
-                        // handled it send it to the session manager to figure
-                        // out.
+                    if (mayChangeVolume) {
+                        if (mUseTvRouting) {
+                            dispatchDirectAudioEvent(event);
+                        } else {
+                            // If we aren't passing to the user and no one else
+                            // handled it send it to the session manager to figure
+                            // out.
 
-                        // Rewrite the event to use key-down as sendVolumeKeyEvent will
-                        // only change the volume on key down.
-                        KeyEvent newEvent = new KeyEvent(KeyEvent.ACTION_DOWN, keyCode);
-                        MediaSessionLegacyHelper.getHelper(mContext)
-                                .sendVolumeKeyEvent(newEvent, true);
+                            // Rewrite the event to use key-down as sendVolumeKeyEvent will
+                            // only change the volume on key down.
+                            KeyEvent newEvent = new KeyEvent(KeyEvent.ACTION_DOWN, keyCode);
+                            MediaSessionLegacyHelper.getHelper(mContext)
+                                    .sendVolumeKeyEvent(newEvent, true);
+                        }
                     }
                     break;
                 }
