@@ -1,4 +1,4 @@
-# Copyright 2015 The Pure Nexus Project
+# Copyright 2016 The Pure Nexus Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
