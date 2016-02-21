@@ -100,10 +100,6 @@ public class NotificationPanelView extends PanelView implements
 
     public static final long DOZE_ANIMATION_DURATION = 700;
 
-    private static final int ONE_FINGER_QS_INTERCEPT_OFF   = 0;
-    private static final int ONE_FINGER_QS_INTERCEPT_END   = 1;
-    private static final int ONE_FINGER_QS_INTERCEPT_START = 2;
-
     private KeyguardAffordanceHelper mAfforanceHelper;
     private StatusBarHeaderView mHeader;
     private KeyguardUserSwitcher mKeyguardUserSwitcher;
@@ -881,6 +877,9 @@ public class NotificationPanelView extends PanelView implements
             case 2: // Left side pulldown
                 showQsOverride = isLayoutRtl() ? (w - region < x) : (x < region);
                 break;
+            case 3: // pull down anywhere
+                showQsOverride = true;
+                break;
         }
         showQsOverride &= mStatusBarState == StatusBarState.SHADE;
 
@@ -1559,7 +1558,6 @@ public class NotificationPanelView extends PanelView implements
         View header = mKeyguardShowing ? mKeyguardStatusBar : mHeader;
         boolean onHeader = x >= header.getX() && x <= header.getX() + header.getWidth()
                 && y >= header.getTop() && y <= header.getBottom();
-
         if (mQsExpanded) {
             return onHeader || (mScrollView.isScrolledToBottom() && yDiff < 0) && isInQsArea(x, y);
         } else {
