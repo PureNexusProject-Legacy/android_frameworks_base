@@ -3894,6 +3894,12 @@ public final class Settings {
         public static final String RECENT_CARD_TEXT_COLOR = "recent_card_text_color";
 
         /**
+         * show bluetooth icon only when connected
+         * @hide
+         */
+        public static final String SHOW_BLUETOOTH_ICON = "show_bluetooth_icon";
+
+        /**
          * show clear all recents button
          *  @hide
          */
