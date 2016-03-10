@@ -866,7 +866,6 @@ public class PackageManagerService extends IPackageManager.Stub {
 
     private IntentFilterVerifier mIntentFilterVerifier;
 
-
     ArrayList<ComponentName> mDisabledComponentsList;
 
     private IconPackHelper mIconPackHelper;
