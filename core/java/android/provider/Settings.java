@@ -3640,43 +3640,6 @@ public final class Settings {
         public static final String MVNO_ROAMING = "mvno_roaming";
 
         /**
-         * Navigation controls to Use
-         * @hide
-         */
-        public static final String NAV_BUTTONS = "nav_buttons";
-
-        /**
-         * boolean value. toggles using arrow key locations on nav bar
-         * as left and right dpad keys
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_MENU_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
-
-        /**
-         * Navigation bar height when it is on protrait
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
-
-        /**
-         * Navigation bar height when it is on landscape
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
-
-        /**
-         * Navigation bar height when it is on landscape at the right
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
-
-        /**
-         * Wether navigation bar is enabled or not
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_SHOW = "navigation_bar_show";
-
-        /**
          * What color to use for the notification LED by default
          * @hide
          */

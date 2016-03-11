@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 The Android Open Source Project
+ * Copyright (C) 2016 The Pure Nexus Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,6 @@ import android.net.ConnectivityManager;
 import java.util.Locale;
 
 public class PUREUtils {
-
-    public static boolean isNavBarDefault(Context context) {
-        return context.getResources().getBoolean(
-                com.android.internal.R.bool.config_showNavigationBar);
-    }
 
     public static boolean isChineseLanguage() {
        return Resources.getSystem().getConfiguration().locale.getLanguage().startsWith(
