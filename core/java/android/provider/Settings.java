@@ -4129,6 +4129,12 @@ public final class Settings {
         public static final String THREE_FINGER_GESTURE = "three_finger_gesture";
 
         /**
+         * USB Data automatic unlock
+         * @hide
+         */
+        public static final String USB_DATA_AUTO_UNLOCK = "usb_data_auto_unlock";
+
+        /**
          * Whether to use slim recents
          * @hide
          */
