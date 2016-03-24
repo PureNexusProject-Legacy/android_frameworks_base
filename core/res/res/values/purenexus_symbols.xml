@@ -40,6 +40,7 @@
   <java-symbol type="string" name="global_action_screenshot" />
   <java-symbol type="string" name="global_action_screen_record" />
   <java-symbol type="string" name="global_action_search" />
+  <java-symbol type="string" name="global_action_torch" />
   <java-symbol type="string" name="global_action_voicesearch" />
   <java-symbol type="string" name="global_action_current_user" />
   <java-symbol type="drawable" name="ic_lock_screen_record" />
@@ -48,6 +49,7 @@
   <java-symbol type="drawable" name="ic_lock_user" />
   <java-symbol type="drawable" name="ic_lock_assist" />
   <java-symbol type="drawable" name="ic_lock_voice" />
+  <java-symbol type="drawable" name="ic_lock_torch" />
   <java-symbol type="dimen" name="global_actions_avatar_size" />
 
   <!-- Unlink notification images -->
