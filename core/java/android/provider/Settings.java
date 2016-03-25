@@ -3443,6 +3443,12 @@ public final class Settings {
         public static final String HEADS_UP_WHITELIST_VALUES = "heads_up_whitelist_values";
 
         /**
+         * Force heads up in all applications
+         * @hide
+         */
+        public static final String HEADS_UP_FORCE_ALL = "heads_up_force_all";
+
+        /**
          * Immersive recents options
          * 0 = Default AOSP look
          * 1 = Statusbar only
