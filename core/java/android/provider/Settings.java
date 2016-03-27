@@ -3466,6 +3466,12 @@ public final class Settings {
         public static final String HEADS_UP_FORCE_ALL = "heads_up_force_all";
 
         /**
+         * Heads up timeout configuration
+         * @hide
+         */
+        public static final String HEADS_UP_TIMEOUT = "heads_up_timeout";
+
+        /**
          * Immersive recents options
          * 0 = Default AOSP look
          * 1 = Statusbar only
