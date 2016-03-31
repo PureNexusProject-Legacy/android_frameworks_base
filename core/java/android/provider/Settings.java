@@ -3682,12 +3682,6 @@ public final class Settings {
         public static final String LONG_PRESS_KILL_DELAY = "long_press_kill_delay";
 
         /**
-         * Whether to mute annoying notifications
-         * @hide
-         */
-        public static final String MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD = "mute_annoying_notifications_threshold";
-
-        /**
          * Whether national data roaming should be used.
          * @hide
          */
@@ -8903,13 +8897,6 @@ public final class Settings {
          * @hide
          */
         public static final String WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
-
-        /**
-         * Whether to disable audio ducking during active media playback
-         * @hide
-         */
-        public static final String ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK =
-                "zen_disable_ducking_during_media_playback";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
