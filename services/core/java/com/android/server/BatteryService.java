@@ -784,7 +784,7 @@ public final class BatteryService extends SystemService {
                 }
             } else if (status == BatteryManager.BATTERY_STATUS_CHARGING
                     || status == BatteryManager.BATTERY_STATUS_FULL) {
-                if (status == BatteryManager.BATTERY_STATUS_FULL || level >= 90) {
+                if (status == BatteryManager.BATTERY_STATUS_FULL || level == 100) {
                     // Battery is full or charging and nearly full
                     mBatteryLight.setColor(mBatteryFullARGB);
                 } else {
