@@ -15,6 +15,11 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- SystemUI Tuner Parts -->
+    <string name="systemui_tuner_statusbar_title">Statusbar Items</string>
+    <string name="systemui_tuner_qs_title">Quick Settings</string>
+
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">Screen is being recorded</string>
 
