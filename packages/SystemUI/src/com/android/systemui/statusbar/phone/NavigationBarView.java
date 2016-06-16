@@ -101,7 +101,7 @@ public class NavigationBarView extends LinearLayout {
     private final NavigationBarTransitions mBarTransitions;
 
     /**
-     * Tracks the current visibilities of the far left (R.id.one) and right (R.id.six) buttons
+     * Tracks the current visibilities of the far left (R.id.one) and right (R.id.seven) buttons
      * while dpad arrow keys are visible.
      *
      * We keep track of the orientations separately because they can get in different states,
@@ -389,17 +389,17 @@ public class NavigationBarView extends LinearLayout {
             setVisibleOrGone(getCurrentView().findViewById(R.id.dpad_left), showingIme);
             setVisibleOrGone(getCurrentView().findViewById(R.id.dpad_right), showingIme);
 
-            View one = getCurrentView().findViewById(mVertical ? R.id.six : R.id.one);
-            View six = getCurrentView().findViewById(mVertical ? R.id.one : R.id.six);
+            View one = getCurrentView().findViewById(mVertical ? R.id.seven : R.id.one);
+            View seven = getCurrentView().findViewById(mVertical ? R.id.one : R.id.seven);
             if (showingIme) {
                 if (one.getVisibility() != View.GONE) {
                     setSideButtonVisibility(true, one.getVisibility());
                     setVisibleOrGone(one, false);
                 }
 
-                if (six.getVisibility() != View.GONE) {
-                    setSideButtonVisibility(false, six.getVisibility());
-                    setVisibleOrGone(six, false);
+                if (seven.getVisibility() != View.GONE) {
+                    setSideButtonVisibility(false, seven.getVisibility());
+                    setVisibleOrGone(seven, false);
                 }
             } else {
                 if (getSideButtonVisibility(true) != -1) {
@@ -407,7 +407,7 @@ public class NavigationBarView extends LinearLayout {
                     setSideButtonVisibility(true, - 1);
                 }
                 if (getSideButtonVisibility(false) != -1) {
-                    six.setVisibility(getSideButtonVisibility(false));
+                    seven.setVisibility(getSideButtonVisibility(false));
                     setSideButtonVisibility(false, -1);
                 }
             }
@@ -459,8 +459,8 @@ public class NavigationBarView extends LinearLayout {
         setButtonWithTagVisibility(NavbarEditor.NAVBAR_BACK, !disableBack);
         setButtonWithTagVisibility(NavbarEditor.NAVBAR_HOME, !disableHome);
         setButtonWithTagVisibility(NavbarEditor.NAVBAR_RECENT, !disableRecent);
-        setButtonWithTagVisibility(NavbarEditor.NAVBAR_POWER, !disableRecent);
-        setButtonWithTagVisibility(NavbarEditor.NAVBAR_SEARCH, !disableSearch);
+        setButtonWithTagVisibility(NavbarEditor.NAVBAR_POWER_BIG, !disableRecent);
+        setButtonWithTagVisibility(NavbarEditor.NAVBAR_SEARCH_BIG, !disableSearch);
     }
 
     private boolean inLockTask() {
@@ -826,10 +826,10 @@ public class NavigationBarView extends LinearLayout {
         // if we're showing dpad arrow keys (e.g. the side button visibility where it's shown != -1)
         // then don't actually update that buttons visibility, but update the stored value
         if (getSideButtonVisibility(true) != -1
-                && findView.getId() == (mVertical ? R.id.six : R.id.one)) {
+                && findView.getId() == (mVertical ? R.id.seven : R.id.one)) {
             setSideButtonVisibility(true, visibility);
         } else if (getSideButtonVisibility(false) != -1
-                && findView.getId() == (mVertical ? R.id.one : R.id.six)) {
+                && findView.getId() == (mVertical ? R.id.one : R.id.seven)) {
             setSideButtonVisibility(false, visibility);
         } else {
             findView.setVisibility(visibility);

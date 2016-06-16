@@ -60,7 +60,7 @@
             android:layout_width="@dimen/navigation_key_width"
             android:layout_height="match_parent"
             systemui:keyRepeat="true"
-            android:layout_weight="0" />
+            android:layout_weight="1" />
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -71,7 +71,7 @@
             android:layout_width="@dimen/navigation_key_width"
             android:layout_height="match_parent"
             systemui:keyRepeat="true"
-            android:layout_weight="0" />
+            android:layout_weight="1" />
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -81,7 +81,7 @@
             android:scaleType="centerInside"
             android:layout_width="@dimen/navigation_key_width"
             android:layout_height="match_parent"
-            android:layout_weight="0"
+            android:layout_weight="1"
             systemui:keyRepeat="true" />
         <View
             android:layout_width="0dp"
@@ -92,7 +92,18 @@
             android:scaleType="centerInside"
             android:layout_width="@dimen/navigation_key_width"
             android:layout_height="match_parent"
-            android:layout_weight="0"
+            android:layout_weight="1"
+            systemui:keyRepeat="true" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <com.android.systemui.statusbar.policy.KeyButtonView
+            android:id="@+id/six"
+            android:scaleType="centerInside"
+            android:layout_width="@dimen/navigation_key_width"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             systemui:keyRepeat="true" />
     </LinearLayout>
     <FrameLayout
@@ -109,7 +120,7 @@
                 android:src="@drawable/ic_ime_switcher_default"
                 android:visibility="invisible" />
         <com.android.systemui.statusbar.policy.KeyButtonView
-            android:id="@+id/six"
+            android:id="@+id/seven"
             android:layout_width="@dimen/navigation_extra_key_width"
             android:layout_height="match_parent"
             android:layout_weight="0"

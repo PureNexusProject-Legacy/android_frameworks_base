@@ -56,13 +56,13 @@ public class NavbarEditor implements View.OnTouchListener {
      * Holds reference to all assignable button ids
      */
     private static final int[] BUTTON_IDS =
-            { R.id.one, R.id.two, R.id.three, R.id.four, R.id.five, R.id.six };
+            { R.id.one, R.id.two, R.id.three, R.id.four, R.id.five, R.id.six, R.id.seven };
 
     /**
      * Subset of BUTTON_IDS, to differentiate small/side buttons
      * since they can be assigned additional functionality.
      */
-    private static final int[] SMALL_BUTTON_IDS = { R.id.one, R.id.six };
+    private static final int[] SMALL_BUTTON_IDS = { R.id.one, R.id.seven };
 
     // holds the button views in the order they currently appear on screen
     private final ArrayList<KeyButtonView> mButtonViews;
@@ -113,7 +113,11 @@ public class NavbarEditor implements View.OnTouchListener {
             R.string.navbar_back_button, R.string.accessibility_back,
             KeyEvent.KEYCODE_BACK, R.drawable.ic_sysbar_back,
             R.drawable.ic_sysbar_back, R.drawable.ic_sysbar_back_side);
-    public static final ButtonInfo NAVBAR_SEARCH = new ButtonInfo("search",
+    public static final ButtonInfo NAVBAR_SEARCH = new ButtonInfo("search0",
+            R.string.navbar_search_button, R.string.accessibility_back,
+            KeyEvent.KEYCODE_SEARCH, R.drawable.ic_sysbar_search,
+            R.drawable.ic_sysbar_search_land, R.drawable.ic_sysbar_search_side);
+    public static final ButtonInfo NAVBAR_SEARCH_BIG = new ButtonInfo("search1",
             R.string.navbar_search_button, R.string.accessibility_back,
             KeyEvent.KEYCODE_SEARCH, R.drawable.ic_sysbar_search,
             R.drawable.ic_sysbar_search_land, R.drawable.ic_sysbar_search_side);
@@ -141,17 +145,22 @@ public class NavbarEditor implements View.OnTouchListener {
             0, R.string.accessibility_dpad_right,
             KeyEvent.KEYCODE_DPAD_RIGHT, 0,
             0, R.drawable.ic_sysbar_ime_right);
-    public static final ButtonInfo NAVBAR_POWER = new ButtonInfo("power",
+    public static final ButtonInfo NAVBAR_POWER = new ButtonInfo("power0",
+            R.string.navbar_power_button, R.string.accessibility_power,
+            KeyEvent.KEYCODE_POWER, R.drawable.ic_sysbar_power, R.drawable.ic_sysbar_power_land,
+            R.drawable.ic_sysbar_power_side);
+    public static final ButtonInfo NAVBAR_POWER_BIG = new ButtonInfo("power1",
             R.string.navbar_power_button, R.string.accessibility_power,
             KeyEvent.KEYCODE_POWER, R.drawable.ic_sysbar_power, R.drawable.ic_sysbar_power_land,
             R.drawable.ic_sysbar_power_side);
 
     private static final ButtonInfo[] ALL_BUTTONS = new ButtonInfo[] {
         NAVBAR_EMPTY, NAVBAR_HOME, NAVBAR_BACK, NAVBAR_SEARCH,
-        NAVBAR_RECENT, NAVBAR_CONDITIONAL_MENU, NAVBAR_ALWAYS_MENU, NAVBAR_MENU_BIG, NAVBAR_POWER
+        NAVBAR_RECENT, NAVBAR_CONDITIONAL_MENU, NAVBAR_ALWAYS_MENU, NAVBAR_MENU_BIG, NAVBAR_POWER,
+        NAVBAR_POWER_BIG, NAVBAR_SEARCH_BIG
     };
 
-    private static final String DEFAULT_SETTING_STRING = "empty|back|home|recent|empty|menu0";
+    private static final String DEFAULT_SETTING_STRING = "empty|empty|back|home|recent|empty|menu0";
 
     public NavbarEditor (View parent, boolean orientation, boolean isRtl) {
         mContext = parent.getContext();
@@ -225,7 +234,7 @@ public class NavbarEditor implements View.OnTouchListener {
             float otherPos = sLocation[mVertical ? 1 : 0];
             float otherDimension = mVertical ? v.getHeight() : v.getWidth();
 
-            if (pos > (otherPos + otherDimension / 4) && pos < (otherPos + otherDimension)) {
+            if (pos > (otherPos + otherDimension / 5) && pos < (otherPos + otherDimension)) {
                 return otherView;
             }
         }
@@ -529,7 +538,11 @@ public class NavbarEditor implements View.OnTouchListener {
             if (!smallButtons) {
                 items.remove(NAVBAR_CONDITIONAL_MENU);
                 items.remove(NAVBAR_ALWAYS_MENU);
+                items.remove(NAVBAR_SEARCH);
+                items.remove(NAVBAR_POWER);
             } else {
+                items.remove(NAVBAR_SEARCH_BIG);
+                items.remove(NAVBAR_POWER_BIG);
                 items.remove(NAVBAR_MENU_BIG);
             }
 
