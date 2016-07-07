@@ -53,7 +53,9 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.android.internal.logging.MetricsLogger;
+import com.android.internal.widget.LockPatternUtils;
 import com.android.keyguard.KeyguardStatusView;
+import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.systemui.DejankUtils;
 import com.android.systemui.EventLogConstants;
 import com.android.systemui.EventLogTags;
@@ -234,12 +236,15 @@ public class NotificationPanelView extends PanelView implements
     private boolean mDoubleTapToSleepEnabled;
     private int mStatusBarHeaderHeight;
     private GestureDetector mDoubleTapGesture;
+    private boolean mQsSecureExpandDisabled;
+    private LockPatternUtils mLockPatternUtils;
 
     public NotificationPanelView(Context context, AttributeSet attrs) {
         super(context, attrs);
         setWillNotDraw(!DEBUG);
 
         mSettingsObserver = new SettingsObserver(mHandler);
+        mLockPatternUtils = new LockPatternUtils(context);
         mDoubleTapGesture = new GestureDetector(mContext, new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onDoubleTap(MotionEvent e) {
@@ -508,7 +513,7 @@ public class NotificationPanelView extends PanelView implements
     }
 
     public void setQsExpansionEnabled(boolean qsExpansionEnabled) {
-        mQsExpansionEnabled = qsExpansionEnabled;
+        mQsExpansionEnabled = qsExpansionEnabled && !isQsSecureExpandDisabled();
         mHeader.setClickable(qsExpansionEnabled);
     }
 
@@ -879,7 +884,7 @@ public class NotificationPanelView extends PanelView implements
                 showQsOverride = true;
         }
 
-        return twoFingerDrag || showQsOverride || stylusButtonClickDrag || mouseButtonClickDrag;
+        return !isQsSecureExpandDisabled() && (twoFingerDrag || showQsOverride || stylusButtonClickDrag || mouseButtonClickDrag);
     }
 
     private void handleQsDown(MotionEvent event) {
@@ -2520,6 +2525,12 @@ public class NotificationPanelView extends PanelView implements
         List<ActivityManager.RunningTaskInfo> tasks = am.getRunningTasks(1);
         return !tasks.isEmpty() && pkgName.equals(tasks.get(0).topActivity.getPackageName());
     }
+    private boolean isQsSecureExpandDisabled() {
+        final boolean keyguardOrShadeShowing = mStatusBarState == StatusBarState.KEYGUARD
+                || mStatusBarState == StatusBarState.SHADE_LOCKED;
+        return mLockPatternUtils.isSecure(KeyguardUpdateMonitor.getCurrentUser()) && mQsSecureExpandDisabled &&
+                keyguardOrShadeShowing;
+    }
 
 	class SettingsObserver extends ContentObserver {
         SettingsObserver(Handler handler) {
@@ -2536,6 +2547,8 @@ public class NotificationPanelView extends PanelView implements
                     Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE), false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_SMART_PULLDOWN), false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.Secure.getUriFor(
+                    Settings.Secure.LOCK_QS_DISABLED), false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -2565,6 +2578,8 @@ public class NotificationPanelView extends PanelView implements
                     Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, 0, UserHandle.USER_CURRENT) == 1;
             mQsSmartPullDown = Settings.System.getIntForUser(resolver,
                     Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
+            mQsSecureExpandDisabled = Settings.Secure.getIntForUser(resolver,
+                    Settings.Secure.LOCK_QS_DISABLED, 0, UserHandle.USER_CURRENT) != 0;
         }
     }
 }

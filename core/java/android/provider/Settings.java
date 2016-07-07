@@ -6755,6 +6755,12 @@ public final class Settings {
         public static final String LOCKSCREEN_TARGETS = "lockscreen_target_actions";
 
         /**
+         * Disable expanding quick settings on secure lock screens
+         * @hide
+         */
+        public static final String LOCK_QS_DISABLED = "lockscreen_qs_disabled";
+
+        /**
          * Whether detail view for the location tile is enabled
          * @hide
          */
