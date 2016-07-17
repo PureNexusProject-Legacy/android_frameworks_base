@@ -150,7 +150,6 @@ public class KeyguardStatusView extends GridLayout {
         super.onConfigurationChanged(newConfig);
         mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
-        mClockView.setTypeface(Typeface.create("sans-serif-light", Typeface.NORMAL));
         mDateView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getResources().getDimensionPixelSize(R.dimen.widget_label_font_size));
         mOwnerInfo.setTextSize(TypedValue.COMPLEX_UNIT_PX,
