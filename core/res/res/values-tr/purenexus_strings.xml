@@ -46,7 +46,7 @@
   <!-- Long-press back kill application -->
   <string name="app_killed_message">Uygulama sonlandırıldı</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">Bu sizin satıcı yazılımınızın güncel olabileceğini gösteriyor. Cihazınız için en son satıcı yazılımını yükleyiniz.</string>
+  <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the <xliff:g id="string">%s</xliff:g> vendor image for your device</string>
   <!-- PureNexus is starting -->
   <string name="android_start_title_pn">PureNexus başlatılıyor\u2026</string>
   <string name="android_upgrading_title_pn">PureNexus güncelleniyor\u2026</string>

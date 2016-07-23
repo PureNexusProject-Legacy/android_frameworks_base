@@ -167,5 +167,5 @@
          [CHAR LIMIT=4] -->
   <!-- Heads up snooze toast -->
   <string name="heads_up_snooze_message_one_minute">Heads-up is gesluimerd voor 1 minuut.</string>
-  <string name="heads_up_snooze_message">Heads-up is gesust voor <xliff:g id="number">%d</xliff:g> minuten.</string>
+  <string name="heads_up_snooze_message">Heads-up is gesluimerd voor <xliff:g id="number">%d</xliff:g> minuten.</string>
 </resources>

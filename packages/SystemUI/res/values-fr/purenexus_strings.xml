@@ -33,7 +33,7 @@
   <string name="accessibility_quick_settings_location_changed_gps_only">Localisation changée en mode appareil uniquement.</string>
   <string name="accessibility_quick_settings_location_changed_high_accuracy">Localisation changée en mode haute précision.</string>
   <string name="quick_settings_location_detail_title">Mode de localisation</string>
-  <string name="quick_settings_location_battery_saving_label">Économiseur de batterie</string>
+  <string name="quick_settings_location_battery_saving_label">Économie de batterie</string>
   <string name="quick_settings_location_gps_only_label">Appareil seulement</string>
   <string name="quick_settings_location_high_accuracy_label">Haute précision</string>
   <!-- ADB over network Tile -->
@@ -42,20 +42,20 @@
   <string name="quick_settings_network_adb_disabled_label">Désactivé</string>
   <string name="accessibility_quick_settings_network_adb_off">ADB sur réseau désactivé.</string>
   <string name="accessibility_quick_settings_network_adb_on">ADB sur réseau activé.</string>
-  <string name="accessibility_quick_settings_network_adb_changed_off">ADB sur réseau s\'est éteint.</string>
+  <string name="accessibility_quick_settings_network_adb_changed_off">ADB sur réseau désactivé.</string>
   <string name="accessibility_quick_settings_network_adb_changed_on">ADB sur le réseau a été activé.</string>
   <!-- Ambient Display QS tile -->
-  <string name="accessibility_quick_settings_ambient_display_off">Adaptation de la luminosité désactivée</string>
-  <string name="accessibility_quick_settings_ambient_display_on">Adaptation de la luminosité activée</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_off">Adaptation de la luminosité désactivée</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_on">Adaptation de la luminosité activée</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Désactiver l\'affichage ambiant</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Activer l\'affichage ambiant</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Affichage ambiant désactivé</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Affichage ambiant activé</string>
   <string name="quick_settings_ambient_display_label">Affichage ambiant</string>
   <!-- Battery Saver QS Tile -->
   <string name="quick_settings_battery_saver">Économiseur de batterie</string>
   <string name="accessibility_quick_settings_battery_saver_off">Économiseur de batterie désactivé.</string>
   <string name="accessibility_quick_settings_battery_saver_on">Économiseur de batterie activé.</string>
-  <string name="accessibility_quick_settings_battery_saver_changed_off">Économiseur de batterie a été désactivé.</string>
-  <string name="accessibility_quick_settings_battery_saver_changed_on">Économiseur de batterie a été activé.</string>
+  <string name="accessibility_quick_settings_battery_saver_changed_off">Économiseur de batterie désactivé.</string>
+  <string name="accessibility_quick_settings_battery_saver_changed_on">Économiseur de batterie activé.</string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Boussole</string>
   <string name="quick_settings_compass_init">Initialisation\u2026</string>
@@ -95,8 +95,8 @@
   <string name="quick_settings_screen_off">Éteindre l\'écran</string>
   <!-- Screen timeout QS tile -->
   <string name="quick_settings_timeout_label">Délai de veille</string>
-  <string name="quick_settings_screen_timeout_detail_title">Mise en veille de l\'écan</string>
-  <string name="accessibility_quick_settings_screen_timeout">Délai de mise en veille de l\'écan : <xliff:g id="timeout" example="30 seconds">%s </xliff:g>.</string>
+  <string name="quick_settings_screen_timeout_detail_title">Délai de mise en veille de l\'écran</string>
+  <string name="accessibility_quick_settings_screen_timeout">Délai de mise en veille de l\'écran : <xliff:g id="timeout" example="30 seconds">%s</xliff:g>.</string>
   <string name="accessibility_quick_settings_screen_timeout_changed">Délai de mise en veille de l\'écran modifié à <xliff:g id="timeout" example="30 seconds">%s</xliff:g>.</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">Son</string>
@@ -145,7 +145,7 @@
   <string name="accessibility_dpad_left">Curseur gauche</string>
   <string name="accessibility_dpad_right">Curseur droit</string>
   <!-- Statusbar Vibrate silent switch -->
-  <string name="status_bar_vibsil">Vibrer</string>
+  <string name="status_bar_vibsil">Vibreur</string>
   <!-- headset icon switch -->
   <string name="status_bar_headset">Casque filaire</string>
   <!-- vpn icon switch -->

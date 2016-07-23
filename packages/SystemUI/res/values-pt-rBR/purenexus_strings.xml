@@ -37,7 +37,7 @@
   <string name="quick_settings_location_gps_only_label">Somente no dispositivo</string>
   <string name="quick_settings_location_high_accuracy_label">Alta precisão</string>
   <!-- ADB over network Tile -->
-  <string name="quick_settings_adb_network">Rede do ADB</string>
+  <string name="quick_settings_adb_network">Rede ADB</string>
   <string name="quick_settings_network_adb_enabled_label">Habilitado</string>
   <string name="quick_settings_network_adb_disabled_label">Desabilitado</string>
   <string name="accessibility_quick_settings_network_adb_off">ADB através da rede desligado.</string>
@@ -48,7 +48,7 @@
   <string name="accessibility_quick_settings_ambient_display_off">Exibição de ambiente desligado</string>
   <string name="accessibility_quick_settings_ambient_display_on">Exibição de ambiente ligado</string>
   <string name="accessibility_quick_settings_ambient_display_changed_off">Exibição de ambiente foi desligado</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_on">Exibição de ambiente foi ligado</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Exibição de ambiente foi ligada</string>
   <string name="quick_settings_ambient_display_label">Exibição de ambiente</string>
   <!-- Battery Saver QS Tile -->
   <string name="quick_settings_battery_saver">Economia de bateria</string>
@@ -76,8 +76,8 @@
   <string name="quick_settings_heads_up_label">Heads up</string>
   <string name="accessibility_quick_settings_heads_up_off">Heads up desligado.</string>
   <string name="accessibility_quick_settings_heads_up_on">Heads up ligado.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Heads-up desligado.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Heads-up ligado.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Heads up desligado.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Heads up ligado.</string>
   <!-- IME selector Tile -->
   <string name="quick_settings_ime_label">IME</string>
   <!-- Music QS Tile -->

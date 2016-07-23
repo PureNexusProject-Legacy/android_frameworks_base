@@ -38,18 +38,18 @@
   <string name="quick_settings_location_high_accuracy_label">Yüksek doğruluk</string>
   <!-- ADB over network Tile -->
   <string name="quick_settings_adb_network">ADB ağ</string>
-  <string name="quick_settings_network_adb_enabled_label">Etkinleştir</string>
+  <string name="quick_settings_network_adb_enabled_label">Etkin</string>
   <string name="quick_settings_network_adb_disabled_label">Devre dışı</string>
-  <string name="accessibility_quick_settings_network_adb_off">ADB ağ üzerinden kapalı.</string>
-  <string name="accessibility_quick_settings_network_adb_on">ADB ağ üzerinden açık.</string>
-  <string name="accessibility_quick_settings_network_adb_changed_off">ADB ağ üzerinden devre dışı.</string>
-  <string name="accessibility_quick_settings_network_adb_changed_on">ADB ağ üzerinden etkin.</string>
+  <string name="accessibility_quick_settings_network_adb_off">Ağ üzerinden ADB kapalı.</string>
+  <string name="accessibility_quick_settings_network_adb_on">Ağ üzerinden ADB açık.</string>
+  <string name="accessibility_quick_settings_network_adb_changed_off">Ağ üzerinden ADB kapatıldı.</string>
+  <string name="accessibility_quick_settings_network_adb_changed_on">Ağ üzerinden ADB açıldı.</string>
   <!-- Ambient Display QS tile -->
-  <string name="accessibility_quick_settings_ambient_display_off">Ortam ekranı devre dışı</string>
-  <string name="accessibility_quick_settings_ambient_display_on">Ortam ekranı açık</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_off">Ortam ekranı kapatıldı</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_on">Ortam ekranı açıldı</string>
-  <string name="quick_settings_ambient_display_label">Ortam Ekranı</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Bildirim ekranı kapalı</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Bildirim ekranı açık</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Bildirim ekranı kapatıldı</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Bildirim ekranı açıldı</string>
+  <string name="quick_settings_ambient_display_label">Bildirim Ekranı</string>
   <!-- Battery Saver QS Tile -->
   <string name="quick_settings_battery_saver">Pil tasarrufu</string>
   <string name="accessibility_quick_settings_battery_saver_off">Pil tasarrufu kapalı.</string>
@@ -73,11 +73,11 @@
   <string name="quick_settings_expanded_desktop">Genişletilmiş</string>
   <string name="quick_settings_expanded_desktop_off">Normal</string>
   <!-- Heads Up QS Tile -->
-  <string name="quick_settings_heads_up_label">Heads up</string>
-  <string name="accessibility_quick_settings_heads_up_off">Heads up kapalı.</string>
-  <string name="accessibility_quick_settings_heads_up_on">Heads up açık.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Heads up kapatıldı.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Heads up açıldı.</string>
+  <string name="quick_settings_heads_up_label">Bildirim pencereleri</string>
+  <string name="accessibility_quick_settings_heads_up_off">Bildirim pencereleri kapalı.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Bildirim pencereleri açık.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Bildirim pencereleri kapatıldı.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Bildirim pencereleri açıldı.</string>
   <!-- IME selector Tile -->
   <string name="quick_settings_ime_label">IME</string>
   <!-- Music QS Tile -->
@@ -166,6 +166,6 @@
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <!-- Heads up snooze toast -->
-  <string name="heads_up_snooze_message_one_minute">Bildirimler 1 dakika ertelendi.</string>
-  <string name="heads_up_snooze_message">Heads up <xliff:g id="number">%d</xliff:g> dakika boyunca ertelenir.</string>
+  <string name="heads_up_snooze_message_one_minute">Bildirim pencereleri 1 dakika ertelendi.</string>
+  <string name="heads_up_snooze_message">Bildirim pencereleri <xliff:g id="number">%d</xliff:g> dakika boyunca ertelenir.</string>
 </resources>

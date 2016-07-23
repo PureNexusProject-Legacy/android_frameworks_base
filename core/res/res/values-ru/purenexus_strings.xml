@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Reboot Dialog -->
-  <string name="global_action_reboot">Перезагрузка</string>
+  <string name="global_action_reboot">Варианты перезагрузки</string>
   <!-- Button to reboot the phone in reboot menu -->
   <string name="reboot_reboot">Перезагрузка</string>
   <!-- Button to reboot the phone into recovery in reboot menu-->
@@ -25,7 +25,7 @@
   <!-- Button to reboot the phone into bootloader in reboot menu -->
   <string name="reboot_bootloader">Загрузчик</string>
   <!-- Button to soft reboot the device in reboot menu -->
-  <string name="reboot_soft">Быстрая перезагрузка</string>
+  <string name="reboot_soft">Перезагрузка интерфейса</string>
   <!-- Reboot Confirmation Dialog. -->
   <string name="reboot_confirm" product="tablet">Ваш планшет будет перезагружен.</string>
   <string name="reboot_confirm" product="default">Ваш телефон будет перезагружен.</string>
@@ -46,7 +46,7 @@
   <!-- Long-press back kill application -->
   <string name="app_killed_message">Приложение закрыто</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">Похоже у вас установлен устаревший раздел \"vendor\". Пожалуйста обновите его до последней доступной версии.</string>
+  <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the <xliff:g id="string">%s</xliff:g> vendor image for your device</string>
   <!-- PureNexus is starting -->
   <string name="android_start_title_pn">Pure Nexus загружается\u2026</string>
   <string name="android_upgrading_title_pn">PureNexus обновляется\u2026</string>

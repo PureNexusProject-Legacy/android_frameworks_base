@@ -46,7 +46,7 @@
   <!-- Long-press back kill application -->
   <string name="app_killed_message">应用已被终止</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">您设备的 Vendor 似乎不是最新版本，请刷入您设备最新的 Vendor。</string>
+  <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the <xliff:g id="string">%s</xliff:g> vendor image for your device</string>
   <!-- PureNexus is starting -->
   <string name="android_start_title_pn">PureNexus 正在启动\u2026</string>
   <string name="android_upgrading_title_pn">PureNexus 正在升级\u2026</string>

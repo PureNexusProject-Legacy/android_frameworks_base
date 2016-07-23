@@ -46,7 +46,7 @@
   <!-- Long-press back kill application -->
   <string name="app_killed_message">Application tuée</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">Il semble que votre partition \"vendor\" soit obsolète. Veuillez flasher la version la plus récente pour votre appareil.</string>
+  <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the <xliff:g id="string">%s</xliff:g> vendor image for your device</string>
   <!-- PureNexus is starting -->
   <string name="android_start_title_pn">Démarrage de PureNexus</string>
   <string name="android_upgrading_title_pn">PureNexus se met à jour\u2026</string>
@@ -61,17 +61,17 @@
   <!-- Description of a category of application permissions, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permgroupdesc_security">Autorisations relatives aux informations de sécurité de l\'appareil</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_readPhoneBlacklist">lire la liste des numéros de téléphone bloqués</string>
+  <string name="permlab_readPhoneBlacklist">Lire la liste noire du téléphone</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_readPhoneBlacklist">Permet à une application de lire la liste des numéros de téléphone bloqués pour la réception d\'appel ou de SMS</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_changePhoneBlacklist">modifier la liste des numéros de téléphone bloqués</string>
+  <string name="permlab_changePhoneBlacklist">modifier la liste noire du téléphone</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_changePhoneBlacklist">Permet à une application de modifier la liste des numéros de téléphone bloqués pour la réception d\'appel ou de SMS</string>
   <string name="default_string">Par défaut</string>
   <!-- Appops -->
   <string name="permission_remember_choice">Mémoriser</string>
-  <string name="permission">Permission</string>
+  <string name="permission">Autorisation</string>
   <!-- App ops requests -->
   <string name="app_ops_access_camera">accéder à l\'appareil photo</string>
   <string name="app_ops_access_location">accéder à votre position</string>
@@ -115,12 +115,12 @@
   <string name="app_ops_use_audio_focus">contrôler le focus audio</string>
   <string name="app_ops_use_bluetooth_volume">contrôler le volume du Bluetooth</string>
   <string name="app_ops_use_master_volume">contrôler le volume principal</string>
-  <string name="app_ops_use_media_buttons">utiliser les boutons de médias</string>
+  <string name="app_ops_use_media_buttons">utiliser les commandes multimédia</string>
   <string name="app_ops_use_media_volume">contrôler le volume des médias</string>
   <string name="app_ops_use_notification_volume">contrôler le volume des notifications</string>
   <string name="app_ops_use_ring_volume">contrôler le volume de la sonnerie</string>
   <string name="app_ops_use_vibrate">utiliser le retour haptique</string>
-  <string name="app_ops_use_voice_volume">contrôler le volume d\'appels</string>
+  <string name="app_ops_use_voice_volume">contrôler le volume des appels vocaux</string>
   <string name="app_ops_write_mms">écrire un MMS</string>
   <string name="app_ops_write_sms">écrire un SMS</string>
   <string name="app_ops_use_fingerprint">utiliser les empreintes digitales</string>
