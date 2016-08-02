@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Reboot Dialog -->
-  <string name="global_action_reboot">Варианты перезагрузки</string>
+  <string name="global_action_reboot">Варианты перезагрузки...</string>
   <!-- Button to reboot the phone in reboot menu -->
   <string name="reboot_reboot">Перезагрузка</string>
   <!-- Button to reboot the phone into recovery in reboot menu-->
@@ -46,9 +46,9 @@
   <!-- Long-press back kill application -->
   <string name="app_killed_message">Приложение закрыто</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">Ваш поставщик изображение не соответствует системе. Пожалуйста, измените-<xliff:g id="string">%s </xliff:g> поставщика изображений для вашего устройства</string>
+  <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the <xliff:g id="string">%s</xliff:g> vendor image for your device</string>
   <!-- PureNexus is starting -->
-  <string name="android_start_title_pn">Pure Nexus загружается\u2026</string>
+  <string name="android_start_title_pn">PureNexus загружается\u2026</string>
   <string name="android_upgrading_title_pn">PureNexus обновляется\u2026</string>
   <!-- ADB over network notification -->
   <string name="adb_net_active_notification_title">Включён режим отладки по сети</string>
