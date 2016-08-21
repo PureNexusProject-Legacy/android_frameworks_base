@@ -17,125 +17,125 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Reboot Dialog -->
-  <string name="global_action_reboot">Reboot</string>
+  <string name="global_action_reboot">Перезавантажити</string>
   <!-- Button to reboot the phone in reboot menu -->
-  <string name="reboot_reboot">Reboot</string>
+  <string name="reboot_reboot">Перезавантаження</string>
   <!-- Button to reboot the phone into recovery in reboot menu-->
-  <string name="reboot_recovery">Recovery</string>
+  <string name="reboot_recovery">Режим відновлення</string>
   <!-- Button to reboot the phone into bootloader in reboot menu -->
-  <string name="reboot_bootloader">Bootloader</string>
+  <string name="reboot_bootloader">Завантажувач</string>
   <!-- Button to soft reboot the device in reboot menu -->
-  <string name="reboot_soft">Soft reboot</string>
+  <string name="reboot_soft">Перезавантаження інтерфейсу</string>
   <!-- Reboot Confirmation Dialog. -->
-  <string name="reboot_confirm" product="tablet">Your tablet will reboot.</string>
-  <string name="reboot_confirm" product="default">Your phone will reboot.</string>
+  <string name="reboot_confirm" product="tablet">Ваш планшет буде перезавантажено.</string>
+  <string name="reboot_confirm" product="default">Ваш телефон буде перезавантажено.</string>
   <!-- Reboot Progress Dialog. This is shown if the user chooses to reboot the phone. -->
-  <string name="reboot_progress">Rebooting\u2026</string>
+  <string name="reboot_progress">Перезавантаження\u2026</string>
   <!-- Global Actions -->
-  <string name="global_action_screenshot">Screenshot</string>
-  <string name="global_action_screen_record">Screen record</string>
-  <string name="global_action_search">Search</string>
-  <string name="global_action_voicesearch">Voice Search</string>
-  <string name="global_action_current_user">Current</string>
-  <string name="global_action_torch">Flashlight</string>
+  <string name="global_action_screenshot">Знімок екрана</string>
+  <string name="global_action_screen_record">Запис з екрану</string>
+  <string name="global_action_search">Пошук</string>
+  <string name="global_action_voicesearch">Голосовий пошук</string>
+  <string name="global_action_current_user">Поточний</string>
+  <string name="global_action_torch">Ліхтарик</string>
   <!-- Lockscreen Wallpaper Permission Title -->
   <!-- Title of an application permission, listed so the user can choose whether they want the application to do this. -->
-  <string name="permlab_setKeyguardWallpaper">set keyguard wallpaper</string>
+  <string name="permlab_setKeyguardWallpaper">Встановити шпалери екрану блокування</string>
   <!-- Lockscreen Wallpaper Permission Description -->
-  <string name="permdesc_setKeyguardWallpaper">Allows an app to change the lock screen wallpaper.</string>
+  <string name="permdesc_setKeyguardWallpaper">Дозволити додатку змінювати шпалери екрану блокування.</string>
   <!-- Long-press back kill application -->
-  <string name="app_killed_message">Application killed</string>
+  <string name="app_killed_message">Додаток закрито</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the <xliff:g id="string">%s</xliff:g> vendor image for your device</string>
+  <string name="system_error_vendorprint">Ваша версія vendor не відповідає системі. Будь ласка, прошийте <xliff:g id="string">%s</xliff:g> vendor для вашого пристрою</string>
   <!-- PureNexus is starting -->
-  <string name="android_start_title_pn">PureNexus is starting\u2026</string>
-  <string name="android_upgrading_title_pn">PureNexus is upgrading\u2026</string>
+  <string name="android_start_title_pn">PureNexus запускається\u2026</string>
+  <string name="android_upgrading_title_pn">PureNexus оновлюється\u2026</string>
   <!-- ADB over network notification -->
-  <string name="adb_net_active_notification_title">ADB over network enabled</string>
+  <string name="adb_net_active_notification_title">Увімкнено функцію ADB по мережі</string>
   <!-- ADB over USB and network notification -->
-  <string name="adb_both_active_notification_title">ADB over USB &amp; network enabled</string>
+  <string name="adb_both_active_notification_title">Увімкнено функцію ADB по USB та мережі</string>
   <!-- ADB notification message-->
-  <string name="adb_active_generic_notification_message">Touch to disable debugging.</string>
+  <string name="adb_active_generic_notification_message">Торкніться, щоб вимкнути налагодження.</string>
   <!-- Title of a category of application permissions, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permgrouplab_security">Security</string>
+  <string name="permgrouplab_security">Безпека</string>
   <!-- Description of a category of application permissions, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permgroupdesc_security">Permissions related to device security information.</string>
+  <string name="permgroupdesc_security">Дозволи, пов\'язані з інформацією про безпеку пристрою.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_readPhoneBlacklist">read phone blacklist</string>
+  <string name="permlab_readPhoneBlacklist">читати чорний список</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_readPhoneBlacklist">Allows an app to read information about phone numbers that are blocked for incoming calls or messages.</string>
+  <string name="permdesc_readPhoneBlacklist">Дозволяє додатку читати інформацію про телефонні номери, які заблоковані для вхідних дзвінків або повідомлень.</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_changePhoneBlacklist">change phone blacklist</string>
+  <string name="permlab_changePhoneBlacklist">змінити чорний список</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_changePhoneBlacklist">Allows an app to change the phone numbers that are blocked for incoming calls or messages.</string>
-  <string name="default_string">Default</string>
+  <string name="permdesc_changePhoneBlacklist">Дозволяє додатку змінити номери телефонів, які заблоковані для вхідних дзвінків або повідомлень.</string>
+  <string name="default_string">За замовчуванням</string>
   <!-- Appops -->
-  <string name="permission_remember_choice">Remember</string>
-  <string name="permission">Permission</string>
+  <string name="permission_remember_choice">Запам\'ятати</string>
+  <string name="permission">Дозвіл</string>
   <!-- App ops requests -->
-  <string name="app_ops_access_camera">access the camera</string>
-  <string name="app_ops_access_location">access your location</string>
-  <string name="app_ops_access_notifications">read your notifications</string>
-  <string name="app_ops_activate_vpn">activate a VPN</string>
-  <string name="app_ops_auto_start">start at power up</string>
-  <string name="app_ops_delete_call_log">delete your call log</string>
-  <string name="app_ops_delete_contacts">delete your contacts</string>
-  <string name="app_ops_delete_mms">delete your MMS messages</string>
-  <string name="app_ops_delete_sms">delete your SMS messages</string>
-  <string name="app_ops_draw_on_top">draw windows on top</string>
-  <string name="app_ops_get_usage_stats">get app usage stats</string>
-  <string name="app_ops_keep_device_awake">keep your device awake</string>
-  <string name="app_ops_make_phone_call">make a phone call</string>
-  <string name="app_ops_modify_calendar">update your calendar</string>
-  <string name="app_ops_modify_call_log">update the call log</string>
-  <string name="app_ops_modify_clipboard">modify the clipboard</string>
-  <string name="app_ops_modify_contacts">update your contacts</string>
-  <string name="app_ops_modify_settings">update system settings</string>
-  <string name="app_ops_mute_unmute_microphone">mute/unmute the microphone</string>
-  <string name="app_ops_play_audio">play audio</string>
-  <string name="app_ops_post_notification">post a notification</string>
-  <string name="app_ops_project_media">project media</string>
-  <string name="app_ops_read_calendar">read your calendar</string>
-  <string name="app_ops_read_call_log">read the call log</string>
-  <string name="app_ops_read_clipboard">read the clipboard</string>
-  <string name="app_ops_read_contacts">read your contacts</string>
-  <string name="app_ops_read_mms">read your MMS messages</string>
-  <string name="app_ops_read_sms">read your SMS messages</string>
-  <string name="app_ops_receive_sms">receive an SMS message</string>
-  <string name="app_ops_record_audio">record audio</string>
-  <string name="app_ops_send_mms">send an MMS message</string>
-  <string name="app_ops_send_sms">send an SMS message</string>
-  <string name="app_ops_start_at_bootup">start at power up</string>
-  <string name="app_ops_toast_window">display toast messages</string>
-  <string name="app_ops_toggle_bluetooth">toggle Bluetooth</string>
-  <string name="app_ops_toggle_mobile_data">toggle cellular data</string>
-  <string name="app_ops_toggle_nfc">toggle NFC</string>
-  <string name="app_ops_toggle_wifi">toggle Wi-Fi</string>
-  <string name="app_ops_use_alarm_volume">control alarm volume</string>
-  <string name="app_ops_use_audio_focus">control the audio focus</string>
-  <string name="app_ops_use_bluetooth_volume">control the Bluetooth volume</string>
-  <string name="app_ops_use_master_volume">control the master volume</string>
-  <string name="app_ops_use_media_buttons">use the media buttons</string>
-  <string name="app_ops_use_media_volume">control the media volume</string>
-  <string name="app_ops_use_notification_volume">control the notification volume</string>
-  <string name="app_ops_use_ring_volume">control the ringtone volume</string>
-  <string name="app_ops_use_vibrate">use haptic feedback</string>
-  <string name="app_ops_use_voice_volume">control the voice call volume</string>
-  <string name="app_ops_write_mms">write an MMS message</string>
-  <string name="app_ops_write_sms">write an SMS message</string>
-  <string name="app_ops_use_fingerprint">use fingerprint</string>
-  <string name="app_ops_add_voicemail">add a voicemail</string>
-  <string name="app_ops_read_phone_state">access phone state</string>
-  <string name="app_ops_scan_wifi">scan Wi-Fi networks</string>
-  <string name="app_ops_change_wallpaper">change the wallpaper</string>
-  <string name="app_ops_assist_structure">use assist structure</string>
-  <string name="app_ops_assist_screenshot">take a screenshot</string>
-  <string name="app_ops_use_body_sensors">use body sensors</string>
-  <string name="app_ops_read_cell_broadcasts">read cell broadcasts</string>
-  <string name="app_ops_mock_location">mock your location</string>
-  <string name="app_ops_read_external_storage">read external storage</string>
-  <string name="app_ops_write_external_storage">write external storage</string>
-  <string name="app_ops_turn_on_screen">turn the screen on</string>
-  <string name="app_ops_get_accounts">get device accounts</string>
-  <string name="app_ops_wifi_change">change Wi-Fi state</string>
+  <string name="app_ops_access_camera">доступ до камери</string>
+  <string name="app_ops_access_location">доступ до вашого місцезнаходження</string>
+  <string name="app_ops_access_notifications">читати ваші сповіщення</string>
+  <string name="app_ops_activate_vpn">активувати VPN</string>
+  <string name="app_ops_auto_start">запуск при завантаженні</string>
+  <string name="app_ops_delete_call_log">видалити з журналу викликів</string>
+  <string name="app_ops_delete_contacts">видалити контакти</string>
+  <string name="app_ops_delete_mms">видалити MMS-повідомлення</string>
+  <string name="app_ops_delete_sms">видалити SMS-повідомлення</string>
+  <string name="app_ops_draw_on_top">відображення поверх інших елементів</string>
+  <string name="app_ops_get_usage_stats">отримання статистики використання додатку</string>
+  <string name="app_ops_keep_device_awake">запобігати засинанню пристрою</string>
+  <string name="app_ops_make_phone_call">зробити телефонний дзвінок</string>
+  <string name="app_ops_modify_calendar">оновити календар</string>
+  <string name="app_ops_modify_call_log">оновити журнал дзвінків</string>
+  <string name="app_ops_modify_clipboard">змінити буфер обміну</string>
+  <string name="app_ops_modify_contacts">змінити контакти</string>
+  <string name="app_ops_modify_settings">змінити системні налаштування</string>
+  <string name="app_ops_mute_unmute_microphone">вимкнення/увімкнення мікрофону</string>
+  <string name="app_ops_play_audio">відтворення аудіо</string>
+  <string name="app_ops_post_notification">вивести сповіщення</string>
+  <string name="app_ops_project_media">трансляція вмісту</string>
+  <string name="app_ops_read_calendar">читати календар</string>
+  <string name="app_ops_read_call_log">читати журнал викликів</string>
+  <string name="app_ops_read_clipboard">читати буфер обміну</string>
+  <string name="app_ops_read_contacts">читати контакти</string>
+  <string name="app_ops_read_mms">читати MMS-повідомлення</string>
+  <string name="app_ops_read_sms">читати SMS-повідомлення</string>
+  <string name="app_ops_receive_sms">отримувати SMS-повідомлення</string>
+  <string name="app_ops_record_audio">записати аудіо</string>
+  <string name="app_ops_send_mms">надіслати MMS-повідомлення</string>
+  <string name="app_ops_send_sms">надіслати SMS-повідомлення</string>
+  <string name="app_ops_start_at_bootup">запуск при завантаженні</string>
+  <string name="app_ops_toast_window">відображати спливаючі сповідщення</string>
+  <string name="app_ops_toggle_bluetooth">увімк/вимк Bluetooth</string>
+  <string name="app_ops_toggle_mobile_data">увімк/вимк передачу даних</string>
+  <string name="app_ops_toggle_nfc">увімк/вимк NFC</string>
+  <string name="app_ops_toggle_wifi">увімк/вимк Wi-Fi</string>
+  <string name="app_ops_use_alarm_volume">змінити гучність сигналу</string>
+  <string name="app_ops_use_audio_focus">керування аудіо фокусом</string>
+  <string name="app_ops_use_bluetooth_volume">керування гучністю Bluetooth</string>
+  <string name="app_ops_use_master_volume">керування майстер-гучності</string>
+  <string name="app_ops_use_media_buttons">використання кнопок мультимедіа</string>
+  <string name="app_ops_use_media_volume">керування гучністю мультимедіа</string>
+  <string name="app_ops_use_notification_volume">керування гучністю сповіщення</string>
+  <string name="app_ops_use_ring_volume">керування гучністю дзвінка</string>
+  <string name="app_ops_use_vibrate">використовувати вібрацю</string>
+  <string name="app_ops_use_voice_volume">керування гучністю виклику</string>
+  <string name="app_ops_write_mms">написати MMS-повідомлення</string>
+  <string name="app_ops_write_sms">написати SMS-повідомлення</string>
+  <string name="app_ops_use_fingerprint">використовувати відбиток пальця</string>
+  <string name="app_ops_add_voicemail">додати голосове повідомлення</string>
+  <string name="app_ops_read_phone_state">читати стан телефону</string>
+  <string name="app_ops_scan_wifi">сканувати мережі Wi-Fi</string>
+  <string name="app_ops_change_wallpaper">змінити фоновий малюнок</string>
+  <string name="app_ops_assist_structure">використовувати помічника</string>
+  <string name="app_ops_assist_screenshot">зробити знімок екрану</string>
+  <string name="app_ops_use_body_sensors">використовувати датчик тіла</string>
+  <string name="app_ops_read_cell_broadcasts">читати широкомовні повідомлення мережі</string>
+  <string name="app_ops_mock_location">доступ до вашого місцезнаходження</string>
+  <string name="app_ops_read_external_storage">читати дані з зовнішнього сховища</string>
+  <string name="app_ops_write_external_storage">використовувати зовнішню пам\'ять</string>
+  <string name="app_ops_turn_on_screen">увімкнути екран</string>
+  <string name="app_ops_get_accounts">отримати список облікових записів</string>
+  <string name="app_ops_wifi_change">змінити стан Wi-Fi</string>
 </resources>

@@ -37,11 +37,11 @@
   <string name="quick_settings_location_gps_only_label">Device only</string>
   <string name="quick_settings_location_high_accuracy_label">High accuracy</string>
   <!-- ADB over network Tile -->
-  <string name="quick_settings_adb_network">ADB network</string>
-  <string name="quick_settings_network_adb_enabled_label">Enabled</string>
-  <string name="quick_settings_network_adb_disabled_label">Disabled</string>
-  <string name="accessibility_quick_settings_network_adb_off">ADB over network off.</string>
-  <string name="accessibility_quick_settings_network_adb_on">ADB over network on.</string>
+  <string name="quick_settings_adb_network">Налагодження через мережу</string>
+  <string name="quick_settings_network_adb_enabled_label">Увімкнено</string>
+  <string name="quick_settings_network_adb_disabled_label">Вимкнено</string>
+  <string name="accessibility_quick_settings_network_adb_off">ADB через мережу вимк.</string>
+  <string name="accessibility_quick_settings_network_adb_on">ADB через мережу увімк.</string>
   <string name="accessibility_quick_settings_network_adb_changed_off">ADB over network turned off.</string>
   <string name="accessibility_quick_settings_network_adb_changed_on">ADB over network turned on.</string>
   <!-- Ambient Display QS tile -->
@@ -51,7 +51,7 @@
   <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient Display turned on</string>
   <string name="quick_settings_ambient_display_label">Ambient Display</string>
   <!-- Battery Saver QS Tile -->
-  <string name="quick_settings_battery_saver">Battery saver</string>
+  <string name="quick_settings_battery_saver">Енергозбереження</string>
   <string name="accessibility_quick_settings_battery_saver_off">Battery saver off.</string>
   <string name="accessibility_quick_settings_battery_saver_on">Battery saver on.</string>
   <string name="accessibility_quick_settings_battery_saver_changed_off">Battery saver turned off.</string>
@@ -59,12 +59,12 @@
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Compass</string>
   <string name="quick_settings_compass_init">Initializing\u2026</string>
-  <string name="accessibility_quick_settings_compass_off">Compass off.</string>
-  <string name="accessibility_quick_settings_compass_on">Compass on.</string>
+  <string name="accessibility_quick_settings_compass_off">Компас вимк.</string>
+  <string name="accessibility_quick_settings_compass_on">Компас увімк.</string>
   <string name="accessibility_quick_settings_compass_changed_off">Compass turned off.</string>
   <string name="accessibility_quick_settings_compass_changed_on">Compass turned on.</string>
   <!-- Brightness QS Tile -->
-  <string name="quick_settings_brightness">Brightness</string>
+  <string name="quick_settings_brightness">Яскравість</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Caffeine</string>
   <string name="accessibility_quick_settings_caffeine_off">Caffeine off.</string>
@@ -82,15 +82,15 @@
   <string name="quick_settings_ime_label">IME</string>
   <!-- Music QS Tile -->
   <string name="quick_settings_music_label">Music</string>
-  <string name="quick_settings_music_play">Play</string>
-  <string name="quick_settings_music_pause">Pause</string>
+  <string name="quick_settings_music_play">Грати</string>
+  <string name="quick_settings_music_pause">Пауза</string>
   <!-- NFC QS tile -->
   <string name="quick_settings_nfc_label">NFC</string>
   <!-- Reboot/Recovery QS Tile -->
-  <string name="quick_settings_reboot_label">Reboot</string>
-  <string name="quick_settings_reboot_recovery_label">Recovery</string>
+  <string name="quick_settings_reboot_label">Перезавантаження</string>
+  <string name="quick_settings_reboot_recovery_label">Режим відновлення</string>
   <!-- Screenshot QS tile -->
-  <string name="quick_settings_screenshot_label">Screenshot</string>
+  <string name="quick_settings_screenshot_label">Знімок екрана</string>
   <!-- Screen off QS tile -->
   <string name="quick_settings_screen_off">Screen off</string>
   <!-- Screen timeout QS tile -->
@@ -99,13 +99,13 @@
   <string name="accessibility_quick_settings_screen_timeout">Screen timeout: <xliff:g id="timeout" example="30 seconds">%s</xliff:g>.</string>
   <string name="accessibility_quick_settings_screen_timeout_changed">Screen timeout changed to <xliff:g id="timeout" example="30 seconds">%s</xliff:g>.</string>
   <!-- Sound QS Tile -->
-  <string name="quick_settings_sound_label">Sound</string>
-  <string name="quick_settings_sound_ring">Ring</string>
-  <string name="quick_settings_sound_vibrate">Vibrate</string>
-  <string name="quick_settings_sound_dnd">Do not disturb</string>
+  <string name="quick_settings_sound_label">Звук</string>
+  <string name="quick_settings_sound_ring">Дзвінок</string>
+  <string name="quick_settings_sound_vibrate">Вібрація</string>
+  <string name="quick_settings_sound_dnd">Не турбувати</string>
   <!-- Sync QS tile -->
-  <string name="quick_settings_sync_label">Sync</string>
-  <string name="accessibility_quick_settings_sync_off">Sync off</string>
+  <string name="quick_settings_sync_label">Синхронізація</string>
+  <string name="accessibility_quick_settings_sync_off">Синхронізацію вимкнено</string>
   <string name="accessibility_quick_settings_sync_on">Sync on</string>
   <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
   <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
@@ -121,10 +121,10 @@
   <!-- Weather string format in expanded statusbar header -->
   <string name="status_bar_expanded_header_weather_format"><xliff:g id="temp">%1$s</xliff:g> - <xliff:g id="condition">%2$s</xliff:g></string>
   <!-- Strings for lockscreen shortcut hints -->
-  <string name="left_shortcut_hint">Swipe right for %1$s</string>
+  <string name="left_shortcut_hint">Змахніть вправо для %1$s</string>
   <string name="right_shortcut_hint">Swipe left for %1$s</string>
   <string name="lockscreen_message">Tap an icon on the left or right to reassign a lock screen shortcut.</string>
-  <string name="lockscreen_default_target">Default</string>
+  <string name="lockscreen_default_target">За замовчуванням</string>
   <string name="select_application">Select application</string>
   <string name="lockscreen_choose_action_title">Choose action</string>
   <string name="lockscreen_none_target">None</string>
@@ -135,7 +135,7 @@
   <string name="navbar_dialog_title">Choose action to assign</string>
   <string name="navbar_home_button">Home button</string>
   <string name="navbar_recent_button">Recent button</string>
-  <string name="navbar_search_button">Search button</string>
+  <string name="navbar_search_button">Кнопка пошуку</string>
   <string name="navbar_back_button">Back button</string>
   <string name="navbar_empty_button">Empty button</string>
   <string name="navbar_menu_conditional_button">Menu (autoHide) button</string>
@@ -145,7 +145,7 @@
   <string name="accessibility_dpad_left">Cursor left</string>
   <string name="accessibility_dpad_right">Cursor right</string>
   <!-- Statusbar Vibrate silent switch -->
-  <string name="status_bar_vibsil">Vibrate</string>
+  <string name="status_bar_vibsil">Вібрація</string>
   <!-- headset icon switch -->
   <string name="status_bar_headset">Wired headset</string>
   <!-- vpn icon switch -->
@@ -155,7 +155,7 @@
   <!-- Screenrecord notification title -->
   <string name="screenrecord_notif_title">Recording screen</string>
   <!-- Screenrecord notification action: Stop -->
-  <string name="screenrecord_notif_stop">Stop</string>
+  <string name="screenrecord_notif_stop">Стоп</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Show pointer</string>
   <string name="screenrecord_notif_pointer_off">Hide pointer</string>

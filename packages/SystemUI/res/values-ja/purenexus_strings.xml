@@ -99,8 +99,8 @@
   <string name="accessibility_quick_settings_screen_timeout">画面のタイムアウト: <xliff:g id="timeout" example="30秒">%s</xliff:g></string>
   <string name="accessibility_quick_settings_screen_timeout_changed">画面のタイムアウトが<xliff:g id="timeout" example="30秒">%s</xliff:g>秒に変更されました</string>
   <!-- Sound QS Tile -->
-  <string name="quick_settings_sound_label">音</string>
-  <string name="quick_settings_sound_ring">着信音</string>
+  <string name="quick_settings_sound_label">サウンド</string>
+  <string name="quick_settings_sound_ring">通知オン</string>
   <string name="quick_settings_sound_vibrate">バイブレーション</string>
   <string name="quick_settings_sound_dnd">通知を非表示</string>
   <!-- Sync QS tile -->

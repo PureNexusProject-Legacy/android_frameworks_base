@@ -18,21 +18,21 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Cardinal directions for the compass tile -->
   <string-array name="cardinal_directions">
-    <item>N</item>
+    <item>Пн.</item>
     <!-- North -->
-    <item>NE</item>
+    <item>Пн.Сх.</item>
     <!-- North east -->
-    <item>E</item>
+    <item>Сх.</item>
     <!-- East -->
-    <item>SE</item>
+    <item>Пд.Сх.</item>
     <!-- South east -->
-    <item>S</item>
+    <item>Пд.</item>
     <!-- South -->
-    <item>SW</item>
+    <item>Пд.Зх.</item>
     <!-- South west -->
-    <item>W</item>
+    <item>Зх.</item>
     <!-- West -->
-    <item>NW</item>
+    <item>Пн.Зх.</item>
     <!-- North west -->
   </string-array>
 </resources>

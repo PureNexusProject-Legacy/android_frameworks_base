@@ -21,9 +21,9 @@
   <!-- Button to reboot the phone in reboot menu -->
   <string name="reboot_reboot">重新啟動</string>
   <!-- Button to reboot the phone into recovery in reboot menu-->
-  <string name="reboot_recovery">復原模式</string>
+  <string name="reboot_recovery">Recovery</string>
   <!-- Button to reboot the phone into bootloader in reboot menu -->
-  <string name="reboot_bootloader">引導裝載模式</string>
+  <string name="reboot_bootloader">Bootloader</string>
   <!-- Button to soft reboot the device in reboot menu -->
   <string name="reboot_soft">軟重啟</string>
   <!-- Reboot Confirmation Dialog. -->
@@ -33,7 +33,7 @@
   <string name="reboot_progress">正在重新啟動\u2026</string>
   <!-- Global Actions -->
   <string name="global_action_screenshot">擷取螢幕畫面</string>
-  <string name="global_action_screen_record">螢幕錄製</string>
+  <string name="global_action_screen_record">錄製螢幕</string>
   <string name="global_action_search">搜尋</string>
   <string name="global_action_voicesearch">語音搜尋</string>
   <string name="global_action_current_user">目前</string>
@@ -63,7 +63,7 @@
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_readPhoneBlacklist">讀取手機黑名單</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_readPhoneBlacklist">允許應用程式讀取不被允許傳入訊息或撥入電話的電話號碼的相關資訊。</string>
+  <string name="permdesc_readPhoneBlacklist">允許應用程式讀取不被允許傳入訊息或撥入電話的電話號碼相關資訊。</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_changePhoneBlacklist">更改電話黑名單</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -73,8 +73,8 @@
   <string name="permission_remember_choice">記住</string>
   <string name="permission">權限</string>
   <!-- App ops requests -->
-  <string name="app_ops_access_camera">訪問攝像頭</string>
-  <string name="app_ops_access_location">獲取您的位置</string>
+  <string name="app_ops_access_camera">存取相機</string>
+  <string name="app_ops_access_location">存取您的位置</string>
   <string name="app_ops_access_notifications">讀取您的通知</string>
   <string name="app_ops_activate_vpn">啟用 VPN</string>
   <string name="app_ops_auto_start">開機時啟動</string>

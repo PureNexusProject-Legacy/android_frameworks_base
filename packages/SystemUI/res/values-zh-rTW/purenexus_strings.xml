@@ -76,8 +76,8 @@
   <string name="quick_settings_heads_up_label">迅速瀏覽通知</string>
   <string name="accessibility_quick_settings_heads_up_off">迅速瀏覽通知 關閉。</string>
   <string name="accessibility_quick_settings_heads_up_on">迅速瀏覽通知 開啟。</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">已關閉迅速瀏覽通知。</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">已開啟迅速瀏覽通知。</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">已關閉「迅速瀏覽通知」。</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">已開啟「迅速瀏覽通知」。</string>
   <!-- IME selector Tile -->
   <string name="quick_settings_ime_label">輸入法</string>
   <!-- Music QS Tile -->
@@ -88,7 +88,7 @@
   <string name="quick_settings_nfc_label">NFC</string>
   <!-- Reboot/Recovery QS Tile -->
   <string name="quick_settings_reboot_label">重新啟動</string>
-  <string name="quick_settings_reboot_recovery_label">復原模式</string>
+  <string name="quick_settings_reboot_recovery_label">Recovery</string>
   <!-- Screenshot QS tile -->
   <string name="quick_settings_screenshot_label">擷取螢幕畫面</string>
   <!-- Screen off QS tile -->
@@ -96,8 +96,8 @@
   <!-- Screen timeout QS tile -->
   <string name="quick_settings_timeout_label">逾時</string>
   <string name="quick_settings_screen_timeout_detail_title">螢幕逾時</string>
-  <string name="accessibility_quick_settings_screen_timeout">螢幕逾時：<xliff:g id="timeout" example="30 秒">%s</xliff:g></string>
-  <string name="accessibility_quick_settings_screen_timeout_changed">螢幕逾時已變更為 <xliff:g id="timeout" example="30 秒">%s</xliff:g></string>
+  <string name="accessibility_quick_settings_screen_timeout">螢幕逾時：<xliff:g id="timeout" example="30 秒">%s</xliff:g>。</string>
+  <string name="accessibility_quick_settings_screen_timeout_changed">螢幕逾時已變更為 <xliff:g id="timeout" example="30 秒">%s</xliff:g>。</string>
   <!-- Sound QS Tile -->
   <string name="quick_settings_sound_label">音效</string>
   <string name="quick_settings_sound_ring">鈴聲</string>
@@ -112,8 +112,8 @@
   <!-- USB tether QS tile -->
   <string name="accessibility_quick_settings_usb_tether_off">USB 網路共用 關閉</string>
   <string name="accessibility_quick_settings_usb_tether_on">USB 網路共用 開啟</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_off">USB 網路共用已關閉</string>
-  <string name="accessibility_quick_settings_usb_tether_changed_on">USB 網路共用已關閉</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_off">已關閉 USB 網路共用</string>
+  <string name="accessibility_quick_settings_usb_tether_changed_on">已開啟 USB 網路共用</string>
   <string name="quick_settings_usb_tether_label">USB 網路共用</string>
   <!-- Volume QS Tile -->
   <string name="accessibility_quick_settings_volume_panel">音量面板。</string>
@@ -121,8 +121,8 @@
   <!-- Weather string format in expanded statusbar header -->
   <string name="status_bar_expanded_header_weather_format"><xliff:g id="temp">%1$s</xliff:g> - <xliff:g id="condition">%2$s</xliff:g></string>
   <!-- Strings for lockscreen shortcut hints -->
-  <string name="left_shortcut_hint">向右滑動啟動 %1$s</string>
-  <string name="right_shortcut_hint">向左滑動啟動 %1$s</string>
+  <string name="left_shortcut_hint">向右滑動以 %1$s</string>
+  <string name="right_shortcut_hint">向左滑動以 %1$s</string>
   <string name="lockscreen_message">輕觸左邊或右邊的圖示以重新指定鎖定畫面捷徑。</string>
   <string name="lockscreen_default_target">預設</string>
   <string name="select_application">選擇應用程式</string>
@@ -130,7 +130,7 @@
   <string name="lockscreen_none_target">無</string>
   <!-- The text for the button in the notification window-shade that clears
          all of the currently visible notifications. [CHAR LIMIT=10]-->
-  <string name="clear_recents">清除所有通知</string>
+  <string name="clear_recents">全部清除</string>
   <!-- Dialog title for navigation bar button selection -->
   <string name="navbar_dialog_title">選擇要指定的動作</string>
   <string name="navbar_home_button">主畫面按鈕</string>
@@ -153,19 +153,19 @@
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">正在錄製螢幕</string>
   <!-- Screenrecord notification title -->
-  <string name="screenrecord_notif_title">螢幕錄製</string>
+  <string name="screenrecord_notif_title">正在錄製螢幕</string>
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">停止</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">顯示指標</string>
   <string name="screenrecord_notif_pointer_off">隱藏指標</string>
   <!-- Screen record notification error title -->
-  <string name="screenrecord_notif_error">無法錄製螢幕畫面</string>
+  <string name="screenrecord_notif_error">無法錄製螢幕</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <!-- Heads up snooze toast -->
-  <string name="heads_up_snooze_message_one_minute">迅速瀏覽通知將暫時停用 1 分鐘。</string>
-  <string name="heads_up_snooze_message">迅速瀏覽通知將暫時停用 <xliff:g id="Minutes">%d</xliff:g> 分鐘。</string>
+  <string name="heads_up_snooze_message_one_minute">「迅速瀏覽通知」將暫時停用 1 分鐘。</string>
+  <string name="heads_up_snooze_message">「迅速瀏覽通知」將暫時停用 <xliff:g id="Minutes">%d</xliff:g> 分鐘。</string>
 </resources>

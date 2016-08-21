@@ -67,7 +67,7 @@
   <string name="quick_settings_brightness">Brillo</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Cafeína</string>
-  <string name="accessibility_quick_settings_caffeine_off">Cafeína fuera.</string>
+  <string name="accessibility_quick_settings_caffeine_off">Cafeína apagada.</string>
   <string name="accessibility_quick_settings_caffeine_on">Cafeína encendida.</string>
   <!-- Expanded Desktop QS Tile -->
   <string name="quick_settings_expanded_desktop">Extendido</string>
