@@ -122,6 +122,8 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
 
     public StatusBarIconController(Context context, View statusBar, View keyguardStatusBar,
             PhoneStatusBar phoneStatusBar) {
+        super(context.getResources().getStringArray(
+                com.android.internal.R.array.config_statusBarIcons));
         mContext = context;
         mPhoneStatusBar = phoneStatusBar;
         mSystemIconArea = (LinearLayout) statusBar.findViewById(R.id.system_icon_area);
@@ -151,7 +153,6 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mDarkModeIconColorSingleTone = context.getColor(R.color.dark_mode_icon_color_single_tone);
         mLightModeIconColorSingleTone = context.getColor(R.color.light_mode_icon_color_single_tone);
         mHandler = new Handler();
-        defineSlots();
         loadDimens();
 
         mClock.setStatusBarIconController(this);
@@ -213,11 +214,6 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
                 com.android.internal.R.dimen.status_bar_icon_size);
         mIconHPadding = mContext.getResources().getDimensionPixelSize(
                 R.dimen.status_bar_icon_padding);
-    }
-
-    public void defineSlots() {
-        defineSlots(mContext.getResources().getStringArray(
-                com.android.internal.R.array.config_statusBarIcons));
     }
 
     private void addSystemIcon(int index, StatusBarIcon icon) {

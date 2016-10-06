@@ -6496,6 +6496,12 @@ public final class Settings {
                 "managed_profile_contact_remote_search";
 
         /**
+         * Holds comma separated list of ordering of QS tiles.
+         * @hide
+         */
+        public static final String QS_TILES = "sysui_qs_tiles";
+
+        /**
          * Beginning of Pure Secure Settings Additions
          * @hide
          */
@@ -6585,7 +6591,8 @@ public final class Settings {
             PREFERRED_TTY_MODE,
             ENHANCED_VOICE_PRIVACY_ENABLED,
             TTY_MODE_ENABLED,
-            INCALL_POWER_BUTTON_BEHAVIOR
+            INCALL_POWER_BUTTON_BEHAVIOR,
+            QS_TILES,
         };
 
         /**
