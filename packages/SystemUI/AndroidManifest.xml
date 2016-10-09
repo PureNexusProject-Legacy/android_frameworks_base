@@ -247,7 +247,7 @@
                   android:theme="@style/TunerSettings"
                   android:label="@string/statusbar_icons_blacklist"
                   android:process=":tuner"
-                  android:parentActivityName="com.android.purenexussettings"
+                  android:parentActivityName="com.pure.settings.fragments.StatusBarSettings"
                   android:exported="true">
         </activity>
 
@@ -268,7 +268,7 @@
                   android:theme="@style/TunerSettings"
                   android:label="@string/navbar_tuner_title"
                   android:process=":tuner"
-                  android:parentActivityName="com.android.purenexussettings"
+                  android:parentActivityName="com.pure.settings.fragments.NavBarSettings"
                   android:exported="true">
         </activity>
 
@@ -276,7 +276,7 @@
                   android:theme="@style/TunerSettings"
                   android:label="@string/tuner_display_color"
                   android:process=":tuner"
-                  android:parentActivityName="com.android.purenexussettings"
+                  android:parentActivityName="com.pure.settings.fragments.DisplaySettings"
                   android:exported="true">
         </activity>
 
@@ -284,7 +284,7 @@
                   android:theme="@style/TunerSettings"
                   android:label="@string/tuner_notification_control"
                   android:process=":tuner"
-                  android:parentActivityName="com.android.purenexussettings"
+                  android:parentActivityName="com.pure.settings.fragments.NotificationMediaSettings"
                   android:exported="true">
         </activity>
 
