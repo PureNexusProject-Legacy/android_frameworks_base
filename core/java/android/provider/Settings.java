@@ -3847,6 +3847,12 @@ public final class Settings {
                 "notification_light_screen_on_enable";
 
         /**
+         * Quick Settings number of columns
+         * @hide
+         */
+        public static final String QS_LAYOUT_COLUMNS = "qs_layout_columns";
+
+        /**
          * Quick Settings Smart Pulldown
          * @hide
          */
