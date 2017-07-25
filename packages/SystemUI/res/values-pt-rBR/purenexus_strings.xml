@@ -54,9 +54,9 @@
   <!-- Brightness QS Tile -->
   <string name="quick_settings_brightness">Brilho</string>
   <!-- Caffeine QS Tile -->
-  <string name="quick_settings_caffeine_label">Cafeína</string>
-  <string name="accessibility_quick_settings_caffeine_off">Cafeína desligada.</string>
-  <string name="accessibility_quick_settings_caffeine_on">Cafeína ligada.</string>
+  <string name="quick_settings_caffeine_label">Manter acordado</string>
+  <string name="accessibility_quick_settings_caffeine_off">Manter acordado desligado.</string>
+  <string name="accessibility_quick_settings_caffeine_on">Manter acordado ligado.</string>
   <!-- Expanded Desktop QS Tile -->
   <string name="quick_settings_expanded_desktop">Expandida</string>
   <string name="quick_settings_expanded_desktop_off">Normal</string>
